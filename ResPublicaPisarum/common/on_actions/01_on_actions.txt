@@ -1,0 +1,13 @@
+#When adding effects directly in on_actions always consider if it would be best to do so through a scripted effect. on_actions with a lot of script in them are harder to get an overview of.
+# country
+on_startup = {
+	if = {
+		culture_group = Tuscan
+	}
+	add_faction = guelphs
+	add_faction = ghibellines
+	add_faction_influence = {
+		faction = ghibellines
+		influence = 50
+	}
+}

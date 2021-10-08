@@ -1,0 +1,34 @@
+# INSTRUCTIONS:
+# -------------
+# is_triggered_only - Triggered from within the code or by event effects. DO NOT REMOVE THE STOCK ONES.
+# months - The number of months this CB will be valid. Only works for triggered CBs.
+# prerequisites - A condition that automatically activates a CB. Does not work for triggered CBs.
+# no_opinion_hit - If yes you get no negative opinion from this
+#
+# ROOT = attacker
+# FROM = target
+cb_convert_to_guelphs = {
+	valid_for_subject = no
+	is_triggered_only = yes
+	months = 240
+	prerequisites = {
+		# Can revolutionaries even have factions?
+		is_revolutionary = no
+		# It makes sense to have them as neighbros
+		is_neighbor_of = FROM
+		# Truce? no CB!
+		NOT = {
+			truce_with = FROM
+		}
+		# Guelphs must be in power
+		ROOT = {
+			faction_in_power = guelphs
+		}
+		# Target
+		FROM = {
+			faction_in_power = ghibellines
+			is_subject = no
+		}
+	}
+	war_goal = convert_faction_to_guelphs
+}

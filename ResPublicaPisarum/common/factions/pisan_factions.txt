@@ -1,0 +1,22 @@
+guelphs = {
+	monarch_power = ADM
+	always = yes
+	modifier = {
+		papal_influence = 1
+		unrest_catholic_provinces = -3
+		imperial_authority_value = -0.02
+		female_advisor_chance = -0.2
+		republican_tradition = -1.5
+	}
+}
+
+ghibellines = {
+	monarch_power = DIP
+	always = yes
+	modifier = {
+		papal_influence = -1
+		unrest_catholic_provinces = 3
+		imperial_authority_value = 0.02
+		rival_change_cost = -0.2
+	}
+}
