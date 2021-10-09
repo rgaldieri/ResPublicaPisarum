@@ -9,8 +9,8 @@ pisan_missions_1 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	pisan_proud = {
-		icon = pisan_proud
+	pisan_pride = {
+		icon = pisan_pride
 		position = 1
 		required_missions = {
 			#None
@@ -45,11 +45,11 @@ pisan_missions_1 = {
 			}
 		}
 	}
-	dominate_the_signoria = {
-		icon = dominate_the_signoria
+	wipe_the_signoria_out = {
+		icon = wipe_the_signoria_out
 		position = 2
 		required_missions = {
-			pisan_proud
+			pisan_pride
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -61,10 +61,13 @@ pisan_missions_1 = {
 			}
 		}
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 4
-				OR = {
-					area = tuscany_area
+			OR = {
+				# Florence is vassal of Pisa or Florence does not exist
+				LAN = {
+					vassal_of = ROOT
+				}
+				NOT = {
+					exists = LAN
 				}
 			}
 			2978 = {
@@ -103,7 +106,7 @@ pisan_missions_1 = {
 		icon = a_different_granducato
 		position = 3
 		required_missions = {
-			dominate_the_signoria
+			wipe_the_signoria_out
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -115,6 +118,7 @@ pisan_missions_1 = {
 			}
 		}
 		trigger = {
+			# At least four provinces must be owned by Pisa
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 4
 				OR = {
@@ -130,6 +134,34 @@ pisan_missions_1 = {
 		}
 		effect = {
 			#TODO
+		}
+	}
+	In_supremae_dignitatis = {
+		icon = In_supremae_dignitatis
+		position = 5
+		required_missions = {
+		}
+		provinces_to_highlight = {
+			province_id = 116
+		}
+		trigger = {
+			# Both Pisa and siena must have an university
+			AND = {
+				116 = {
+					owned_by = ROOT
+					has_building = university
+				}
+				117 = {
+					owned_by = ROOT
+					has_building = university
+				}
+			}
+		}
+		effect = {
+			# Add prestige, add some bonuses, maybe tech cost -5%
+			ROOT = {
+				add_prestige = 20
+			}
 		}
 	}
 }
@@ -149,7 +181,8 @@ pisan_missions_2 = {
 		position = 3
 		icon = archbishop_of_the_tyrrhenian
 		required_missions = {
-			dominate_the_signoria
+			wipe_the_signoria_out
+			true_bischeri_capital
 		}
 		provinces_to_highlight = {
 			region = corsica_sardinia_area
@@ -165,7 +198,41 @@ pisan_missions_2 = {
 			# TODO make that every province must have the same religion that Pisa has
 		}
 		effect = {
-			#TODO ADD EFFECT
+			tunisia_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						is_permanent_claim = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	revenging_kinzica = {
+		position = 3
+		icon = revenging_kinzica
+		required_missions = {
+			archbishop_of_the_tyrrhenian
+		}
+		provinces_to_highlight = {
+			region = corsica_sardinia_area
+			NOT = {
+				owned_by = ROOT
+			}
+			# highlight if your historical capital is not owned by you
+		}
+		trigger = {
+			corsica_sardinia_area = {
+				owned_by = ROOT
+			}
+			# TODO make that every province must have the same religion that Pisa has
+		}
+		effect = {
+			# Avanza in terra santa
+			# Evento che vuole far costruire una statua in memoria di Kinzica?
 		}
 	}
 }
@@ -195,6 +262,58 @@ pisan_mission_3 = {
 			# LOCAL UNREST IN FLORENCE -10
 			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
 			# PRESTIGE?
+		}
+	}
+	the_port_on_don = {
+		position = 5
+		icon = the_port_on_don
+		required_missions = {
+			# None
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 286
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			286 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			# LOCAL UNREST IN FLORENCE -10
+			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
+			# PRESTIGE?
+		}
+	}
+	on_the_silk_road = {
+		position = 6
+		icon = on_the_silk_road
+		required_missions = {
+			the_port_on_don
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 286
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			286 = {
+				owned_by = ROOT
+				has_building = shipyard
+				has_building = marketplace
+			}
+		}
+		effect = {
+			# INCREASE TRADE POWER IN THE AREA FOR 10 YEARS?
+			# MORE CORES?
+			# LOCAL DEVELOPMENT IN THE AREA?
 		}
 	}
 }
@@ -254,10 +373,9 @@ pisan_missions_5 = {
 	}
 	has_country_shield = yes
 	expand_to_the_mediterranean = {
-		position = 4
+		position = 3
 		icon = expand_to_the_mediterranean
 		required_missions = {
-			rebuild_the_merchant_fleet
 		}
 		trigger = {
 			AND = {
@@ -274,7 +392,7 @@ pisan_missions_5 = {
 		}
 	}
 	the_venetian_blockade = {
-		position = 5
+		position = 4
 		icon = the_venetian_blockade
 		required_missions = {
 			expand_to_the_mediterranean
