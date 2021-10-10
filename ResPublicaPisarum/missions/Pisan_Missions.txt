@@ -3,6 +3,35 @@ pisan_missions_1 = {
 	generic = no
 	ai = yes
 	potential = {
+		tag = PIS
+	}
+	has_country_shield = yes
+	true_bischeri_capital = {
+		position = 4
+		icon = true_bischeri_capital
+		required_missions = {
+			a_different_granducato
+		}
+		provinces_to_highlight = {
+			# highlight if your historical capital is not owned by you
+			province_id = 115
+		}
+		trigger = {
+			# USE VARIABLE TO COMPARE PISA AND FLORENCE DEVELOPMENT
+		}
+		effect = {
+			# LOCAL UNREST IN FLORENCE -10
+			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
+			# PRESTIGE?
+		}
+	}
+}
+
+pisan_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -166,8 +195,8 @@ pisan_missions_1 = {
 	}
 }
 
-pisan_missions_2 = {
-	slot = 2
+pisan_missions_3 = {
+	slot = 3
 	generic = no
 	ai = yes
 	potential = {
@@ -182,7 +211,7 @@ pisan_missions_2 = {
 		icon = archbishop_of_the_tyrrhenian
 		required_missions = {
 			wipe_the_signoria_out
-			true_bischeri_capital
+			rebuild_the_merchant_fleet
 		}
 		provinces_to_highlight = {
 			region = corsica_sardinia_area
@@ -237,33 +266,69 @@ pisan_missions_2 = {
 	}
 }
 
-pisan_mission_3 = {
-	slot = 3
+pisan_mission_4 = {
+	slot = 4
 	generic = no
 	ai = yes
 	potential = {
 		tag = PIS
 	}
-	has_country_shield = yes
-	true_bischeri_capital = {
-		position = 2
-		icon = true_bischeri_capital
+	restore_porto_pisano = {
+		position = 1
+		icon = restore_porto_pisano
 		required_missions = {
 			# None
 		}
 		provinces_to_highlight = {
-			# highlight if your historical capital is not owned by you
-			province_id = 115
+			province_id = 116
 		}
 		trigger = {
-			# USE VARIABLE TO COMPARE PISA AND FLORENCE DEVELOPMENT
+			116 = {
+				has_building = dock
+				has_building = shipyard
+			}
 		}
 		effect = {
-			# LOCAL UNREST IN FLORENCE -10
-			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
-			# PRESTIGE?
+			#What can I do? 10 years increment of domestic trade power?
 		}
 	}
+	rebuild_the_merchant_fleet = {
+		position = 2
+		icon = rebuild_the_merchant_fleet
+		required_missions = {
+			restore_porto_pisano
+		}
+		provinces_to_highlight = {
+			region = corsica_sardinia_area
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		trigger = {
+			navy_size_percentage = 1
+			num_of_light_ship = 10
+		}
+		effect = {
+			#What can I do? 10 years increment of domestic trade power?
+		}
+	}
+	control_the_thyrrenian_sea = {
+		position = 3
+		icon = control_the_thyrrenian_sea
+		required_missions = {
+			rebuild_the_merchant_fleet
+		}
+		trigger = {
+			101 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			# Trade ships building cost -15%
+			# Trigger event "Le catene del porto pisano"
+		}
+	}
+	has_country_shield = yes
 	the_port_on_don = {
 		position = 5
 		icon = the_port_on_don
@@ -314,52 +379,6 @@ pisan_mission_3 = {
 			# INCREASE TRADE POWER IN THE AREA FOR 10 YEARS?
 			# MORE CORES?
 			# LOCAL DEVELOPMENT IN THE AREA?
-		}
-	}
-}
-
-pisan_missions_4 = {
-	slot = 4
-	generic = no
-	ai = yes
-	potential = {
-		tag = PIS
-	}
-	has_country_shield = yes
-	rebuild_the_merchant_fleet = {
-		position = 1
-		icon = rebuild_the_merchant_fleet
-		required_missions = {
-			# None
-		}
-		provinces_to_highlight = {
-			region = corsica_sardinia_area
-			NOT = {
-				owned_by = ROOT
-			}
-		}
-		trigger = {
-			navy_size_percentage = 1
-			num_of_light_ship = 10
-		}
-		effect = {
-			#What can I do? 10 years increment of domestic trade power?
-		}
-	}
-	control_the_thyrrenian_sea = {
-		position = 2
-		icon = control_the_thyrrenian_sea
-		required_missions = {
-			rebuild_the_merchant_fleet
-		}
-		trigger = {
-			101 = {
-				is_strongest_trade_power = ROOT
-			}
-		}
-		effect = {
-			# Trade ships building cost -15%
-			# Trigger event "Le catene del porto pisano"
 		}
 	}
 }
