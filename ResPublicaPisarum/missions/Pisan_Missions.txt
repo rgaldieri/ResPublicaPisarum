@@ -6,38 +6,6 @@ pisan_missions_1 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	true_bischeri_capital = {
-		position = 4
-		icon = true_bischeri_capital
-		required_missions = {
-			a_different_granducato
-		}
-		provinces_to_highlight = {
-			# highlight if your historical capital is not owned by you
-			province_id = 115
-		}
-		trigger = {
-			# USE VARIABLE TO COMPARE PISA AND FLORENCE DEVELOPMENT
-		}
-		effect = {
-			# LOCAL UNREST IN FLORENCE -10
-			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
-			# PRESTIGE?
-		}
-	}
-}
-
-pisan_missions_2 = {
-	slot = 2
-	generic = no
-	ai = yes
-	potential = {
-		NOT = {
-			map_setup = map_setup_random
-		}
-		tag = PIS
-	}
-	has_country_shield = yes
 	pisan_pride = {
 		icon = pisan_pride
 		position = 1
@@ -74,6 +42,78 @@ pisan_missions_2 = {
 			}
 		}
 	}
+	true_bischeri_capital = {
+		position = 4
+		icon = true_bischeri_capital
+		required_missions = {
+			pisan_pride
+			a_different_granducato
+		}
+		provinces_to_highlight = {
+			# highlight if your historical capital is not owned by you
+			province_id = 115
+		}
+		trigger = {
+			# USE VARIABLE TO COMPARE PISA AND FLORENCE DEVELOPMENT
+		}
+		effect = {
+			# LOCAL UNREST IN FLORENCE -10
+			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
+			# PRESTIGE?
+		}
+	}
+	amalfi_all_over = {
+		position = 6
+		icon = amalfi_all_over
+		required_missions = {
+			true_bischeri_capital
+			french_affairs
+		}
+		provinces_to_highlight = {
+			#
+		}
+		trigger = {
+			# Devastazione a Napoli.
+			# Pisa che possiede mezzo sud italian
+		}
+		effect = {
+			# LOCAL UNREST IN FLORENCE -10
+			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
+			# PRESTIGE?
+		}
+	}
+	the_first_colonies = {
+		position = 6
+		icon = the_first_colonies
+		required_missions = {
+			amalfi_all_over
+		}
+		provinces_to_highlight = {
+			# highlight if your historical capital is not owned by you
+			province_id = 115
+		}
+		trigger = {
+			# finire di possedere il sud italia
+		}
+		effect = {
+			# LOCAL UNREST IN FLORENCE -10
+			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
+			# PRESTIGE?
+		}
+	}
+}
+
+pisan_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		NOT = {
+			map_setup = map_setup_random
+		}
+		tag = PIS
+	}
+	has_country_shield = yes
 	wipe_the_signoria_out = {
 		icon = wipe_the_signoria_out
 		position = 2
@@ -165,9 +205,44 @@ pisan_missions_2 = {
 			#TODO
 		}
 	}
+	control_the_thyrrenian_sea = {
+		position = 4
+		icon = control_the_thyrrenian_sea
+		required_missions = {
+			archbishop_of_the_tyrrhenian
+		}
+		trigger = {
+			101 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			# Trade ships building cost -15%
+			# Trigger event "Le catene del porto pisano"
+		}
+	}
+	french_affairs = {
+		position = 5
+		icon = french_affairs
+		required_missions = {
+			control_the_thyrrenian_sea
+		}
+		trigger = {
+			200 = {
+				owned_by = ROOT
+			}
+			201 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			# Trade ships building cost -15%
+			# Trigger event "Le catene del porto pisano"
+		}
+	}
 	In_supremae_dignitatis = {
 		icon = In_supremae_dignitatis
-		position = 5
+		position = 9
 		required_missions = {
 		}
 		provinces_to_highlight = {
@@ -238,30 +313,36 @@ pisan_missions_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			baleares_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						is_permanent_claim = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
-	revenging_kinzica = {
-		position = 3
-		icon = revenging_kinzica
+	islas_baleares = {
+		position = 5
+		icon = islas_baleares
 		required_missions = {
 			archbishop_of_the_tyrrhenian
 		}
-		provinces_to_highlight = {
-			region = corsica_sardinia_area
-			NOT = {
-				owned_by = ROOT
-			}
-			# highlight if your historical capital is not owned by you
-		}
 		trigger = {
-			corsica_sardinia_area = {
+			200 = {
 				owned_by = ROOT
 			}
-			# TODO make that every province must have the same religion that Pisa has
+			201 = {
+				owned_by = ROOT
+			}
 		}
 		effect = {
-			# Avanza in terra santa
-			# Evento che vuole far costruire una statua in memoria di Kinzica?
+			# Trade ships building cost -15%
+			# Trigger event "Le catene del porto pisano"
 		}
 	}
 }
@@ -273,6 +354,7 @@ pisan_mission_4 = {
 	potential = {
 		tag = PIS
 	}
+	has_country_shield = yes
 	restore_porto_pisano = {
 		position = 1
 		icon = restore_porto_pisano
@@ -312,25 +394,47 @@ pisan_mission_4 = {
 			#What can I do? 10 years increment of domestic trade power?
 		}
 	}
-	control_the_thyrrenian_sea = {
-		position = 3
-		icon = control_the_thyrrenian_sea
+	revenging_kinzica = {
+		position = 4
+		icon = revenging_kinzica
 		required_missions = {
-			rebuild_the_merchant_fleet
+			archbishop_of_the_tyrrhenian
+			ties_with_the_church
+		}
+		provinces_to_highlight = {
+			region = corsica_sardinia_area
+			NOT = {
+				owned_by = ROOT
+			}
+			# highlight if your historical capital is not owned by you
 		}
 		trigger = {
-			101 = {
-				is_strongest_trade_power = ROOT
+			tunisia_area = {
+				owned_by = ROOT
 			}
+			# TODO make that every province must have the same religion that Pisa has
 		}
 		effect = {
-			# Trade ships building cost -15%
-			# Trigger event "Le catene del porto pisano"
+			# Avanza in terra santa
+			# Evento che vuole far costruire una statua in memoria di Kinzica?
 		}
 	}
-	has_country_shield = yes
-	the_port_on_don = {
+	# Here the player gets a claim on the ottomans and byzantium
+	back_to_first_crusade = {
 		position = 5
+		icon = back_to_first_crusade
+		required_missions = {
+			revenging_kinzica
+		}
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	the_port_on_don = {
+		position = 9
 		icon = the_port_on_don
 		required_missions = {
 			# None
@@ -355,7 +459,7 @@ pisan_mission_4 = {
 		}
 	}
 	on_the_silk_road = {
-		position = 6
+		position = 10
 		icon = on_the_silk_road
 		required_missions = {
 			the_port_on_don
@@ -391,8 +495,50 @@ pisan_missions_5 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	expand_to_the_mediterranean = {
+	ties_with_the_church = {
 		position = 3
+		icon = ties_with_the_church
+		required_missions = {
+		}
+		trigger = {
+			# Pisa has cathedral
+			# Papal controller is pisa
+			# Pisa has at least 120 friendship with the pope
+		}
+		effect = {
+			# THIS GIVES WAY TO PISA TO RESTORE THE OLD COLONIES IN THE MEDITERRANEAN
+		}
+	}
+	# Here the player gets a claim on syria
+	egyptian_goods = {
+		position = 5
+		icon = egyptian_goods
+		required_missions = {
+			revenging_kinzica
+		}
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	# Here the player gets a claim on syria
+	back_to_second_crusade = {
+		position = 6
+		icon = back_to_second_crusade
+		required_missions = {
+			egyptian_goods
+		}
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	expand_to_the_mediterranean = {
+		position = 10
 		icon = expand_to_the_mediterranean
 		required_missions = {
 		}
@@ -411,7 +557,7 @@ pisan_missions_5 = {
 		}
 	}
 	the_venetian_blockade = {
-		position = 4
+		position = 11
 		icon = the_venetian_blockade
 		required_missions = {
 			expand_to_the_mediterranean
