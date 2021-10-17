@@ -7,7 +7,7 @@ pisan_missions_1 = {
 	}
 	has_country_shield = yes
 	pisan_pride = {
-		icon = pisan_pride
+		icon = mission_pisa_temporary
 		position = 1
 		required_missions = {
 			#None
@@ -236,13 +236,43 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
+			# Claim sull'occitania
+		}
+	}
+	the_only_true_cross = {
+		position = 5
+		icon = the_only_true_cross
+		required_missions = {
+			french_affairs
+		}
+		trigger = {
+			196 = {
+				owned_by = ROOT
+			}
+			200 = {
+				owned_by = ROOT
+			}
+			2753 = {
+				owned_by = ROOT
+			}
+			4391 = {
+				owned_by = ROOT
+			}
+			4695 = {
+				owned_by = ROOT
+			}
+			198 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
 			# Trade ships building cost -15%
 			# Trigger event "Le catene del porto pisano"
 		}
 	}
 	In_supremae_dignitatis = {
 		icon = In_supremae_dignitatis
-		position = 9
+		position = 7
 		required_missions = {
 		}
 		provinces_to_highlight = {
@@ -433,56 +463,25 @@ pisan_mission_4 = {
 		effect = {
 		}
 	}
-	the_port_on_don = {
-		position = 9
-		icon = the_port_on_don
+	expand_to_the_mediterranean = {
+		position = 7
+		icon = expand_to_the_mediterranean
 		required_missions = {
-			# None
-		}
-		provinces_to_highlight = {
-			OR = {
-				province_id = 286
-			}
-			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+			back_to_first_crusade
+			back_to_second_crusade
 		}
 		trigger = {
-			286 = {
-				owned_by = ROOT
+			AND = {
+				358 = {
+					is_strongest_trade_power = ROOT
+				}
+				341 = {
+					is_strongest_trade_power = ROOT
+				}
 			}
 		}
 		effect = {
-			# LOCAL UNREST IN FLORENCE -10
-			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
-			# PRESTIGE?
-		}
-	}
-	on_the_silk_road = {
-		position = 10
-		icon = on_the_silk_road
-		required_missions = {
-			the_port_on_don
-		}
-		provinces_to_highlight = {
-			OR = {
-				province_id = 286
-			}
-			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		trigger = {
-			286 = {
-				owned_by = ROOT
-				has_building = shipyard
-				has_building = marketplace
-			}
-		}
-		effect = {
-			# INCREASE TRADE POWER IN THE AREA FOR 10 YEARS?
-			# MORE CORES?
-			# LOCAL DEVELOPMENT IN THE AREA?
+			# light ships efficiency +5% ?
 		}
 	}
 }
@@ -528,6 +527,7 @@ pisan_missions_5 = {
 		position = 6
 		icon = back_to_second_crusade
 		required_missions = {
+			back_to_first_crusade
 			egyptian_goods
 		}
 		provinces_to_highlight = {
@@ -537,30 +537,62 @@ pisan_missions_5 = {
 		effect = {
 		}
 	}
-	expand_to_the_mediterranean = {
-		position = 10
-		icon = expand_to_the_mediterranean
+	the_port_on_don = {
+		position = 7
+		icon = the_port_on_don
 		required_missions = {
+			back_to_second_crusade
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 286
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		trigger = {
-			AND = {
-				358 = {
-					is_strongest_trade_power = ROOT
-				}
-				341 = {
-					is_strongest_trade_power = ROOT
-				}
+			286 = {
+				owned_by = ROOT
 			}
 		}
 		effect = {
-			# light ships efficiency +5% ?
+			# LOCAL UNREST IN FLORENCE -10
+			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
+			# PRESTIGE?
+		}
+	}
+	on_the_silk_road = {
+		position = 8
+		icon = on_the_silk_road
+		required_missions = {
+			the_port_on_don
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 286
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			286 = {
+				owned_by = ROOT
+				has_building = shipyard
+				has_building = marketplace
+			}
+		}
+		effect = {
+			# INCREASE TRADE POWER IN THE AREA FOR 10 YEARS?
+			# MORE CORES?
+			# LOCAL DEVELOPMENT IN THE AREA?
 		}
 	}
 	the_venetian_blockade = {
 		position = 11
 		icon = the_venetian_blockade
 		required_missions = {
-			expand_to_the_mediterranean
 		}
 		trigger = {
 			112 = {
