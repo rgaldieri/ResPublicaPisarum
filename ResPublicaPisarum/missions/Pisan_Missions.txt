@@ -82,9 +82,9 @@ pisan_missions_1 = {
 			# PRESTIGE?
 		}
 	}
-	the_first_colonies = {
+	retake_messina = {
 		position = 6
-		icon = the_first_colonies
+		icon = retake_messina
 		required_missions = {
 			amalfi_all_over
 		}
@@ -298,6 +298,21 @@ pisan_missions_2 = {
 			}
 		}
 	}
+	culture_capital = {
+		icon = culture_capital
+		position = 8
+		required_missions = {
+			In_supremae_dignitatis
+		}
+		provinces_to_highlight = {
+		}
+		trigger = {
+			# Age at least enlightment
+			# produced at least 12 admin per month or 10 diplo /10 admin per month
+		}
+		effect = {
+		}
+	}
 }
 
 pisan_missions_3 = {
@@ -357,7 +372,7 @@ pisan_missions_3 = {
 		}
 	}
 	islas_baleares = {
-		position = 5
+		position = 4
 		icon = islas_baleares
 		required_missions = {
 			archbishop_of_the_tyrrhenian
@@ -373,6 +388,54 @@ pisan_missions_3 = {
 		effect = {
 			# Trade ships building cost -15%
 			# Trigger event "Le catene del porto pisano"
+		}
+	}
+	pelops_and_pisas = {
+		position = 6
+		icon = leave_no_thrace
+		required_missions = {
+			back_to_first_crusade
+		}
+		trigger = {
+			112 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			# Start some sort of crisis with venice that could lead to war
+			# You can even reduce Venice trading efficiency!
+		}
+	}
+	leave_no_thrace = {
+		position = 7
+		icon = leave_no_thrace
+		required_missions = {
+			pelops_and_pisas
+		}
+		trigger = {
+			112 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			# Start some sort of crisis with venice that could lead to war
+			# You can even reduce Venice trading efficiency!
+		}
+	}
+	one_last_enemy = {
+		position = 8
+		icon = one_last_enemy
+		required_missions = {
+			expand_to_the_mediterranean
+		}
+		trigger = {
+			112 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			# Start some sort of crisis with venice that could lead to war
+			# You can even reduce Venice trading efficiency!
 		}
 	}
 }
@@ -467,7 +530,7 @@ pisan_mission_4 = {
 		position = 7
 		icon = expand_to_the_mediterranean
 		required_missions = {
-			back_to_first_crusade
+			pelops_and_pisas
 			back_to_second_crusade
 		}
 		trigger = {
@@ -587,21 +650,6 @@ pisan_missions_5 = {
 			# INCREASE TRADE POWER IN THE AREA FOR 10 YEARS?
 			# MORE CORES?
 			# LOCAL DEVELOPMENT IN THE AREA?
-		}
-	}
-	the_venetian_blockade = {
-		position = 11
-		icon = the_venetian_blockade
-		required_missions = {
-		}
-		trigger = {
-			112 = {
-				is_strongest_trade_power = ROOT
-			}
-		}
-		effect = {
-			# Start some sort of crisis with venice that could lead to war
-			# You can even reduce Venice trading efficiency!
 		}
 	}
 }
