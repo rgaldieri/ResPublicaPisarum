@@ -1,0 +1,21 @@
+funding_the_fleet = {
+	global_ship_cost = -0.2
+}
+
+followers_of_the_true_cross = {
+	merchants = 1
+}
+
+porto_pisano = {
+	province_trade_power_value = 10
+	province_trade_power_modifier = 0.2
+}
+
+leave_no_thrace_modifier = {
+	global_missionary_strength = 0.03
+	core_creation = -0.1
+}
+
+the_old_venetian_embassies = {
+	colonists = 1
+}

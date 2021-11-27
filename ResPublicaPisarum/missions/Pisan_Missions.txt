@@ -6,7 +6,6 @@ pisan_missions_1 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	# OK
 	pisan_pride = {
 		icon = mission_pisa_temporary
 		position = 1
@@ -76,23 +75,36 @@ pisan_missions_1 = {
 			amalfi_all_over
 		}
 		trigger = {
-			200 = {
-				owned_by = ROOT
-			}
-			201 = {
-				owned_by = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5				# how many provinces should be owned in the areas below
+				OR = {
+					area = west_pomerania_area					# this can also be region or colonial region
+					area = vorpommern_area
+				}
 			}
 		}
 		effect = {
 			# Claim sull'occitania
 		}
 	}
-	# TODO
 	the_only_true_cross = {
 		position = 7
 		icon = the_only_true_cross
 		required_missions = {
 			french_affairs
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 196
+				province_id = 200
+				province_id = 2753
+				province_id = 4391
+				province_id = 4695
+				province_id = 198
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		trigger = {
 			196 = {
@@ -115,8 +127,21 @@ pisan_missions_1 = {
 			}
 		}
 		effect = {
-			# Trade ships building cost -15%
-			# Trigger event "Le catene del porto pisano"
+			# A BIT MORE?
+			add_country_modifier = {
+				name = "followers_of_the_true_cross"
+				duration = 7300
+			}
+			# THIS COULD ALSO BE AN EVENT
+			if = {
+				limit = {
+					ROOT = {
+						religion = catholic
+					}
+				}
+				add_curia_treasury = 100
+				add_treasury = -100
+			}
 		}
 	}
 }
@@ -222,7 +247,7 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
-			#TODO
+			# TODO
 		}
 	}
 	# TODO
@@ -242,7 +267,6 @@ pisan_missions_2 = {
 			# Trigger event "Le catene del porto pisano"
 		}
 	}
-	# TODO
 	amalfi_all_over = {
 		position = 5
 		icon = amalfi_all_over
@@ -253,20 +277,62 @@ pisan_missions_2 = {
 			province_id = 121			# Naples
 		}
 		trigger = {
-			# At least 20 devastation
 			AND = {
 				121 = {
-					devastation = 25
+					devastation = 20
 				}
 				capital_scope = {
 					higher_development_than = 121
 				}
 			}
-			# Pisa che possiede mezzo sud italian
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				OR = {
+					area = calabria_area
+					area = naples_area
+					area = apulia_area
+				}
+			}
 		}
 		effect = {
+			add_prestige = 20
+			add_army_tradition = 10
+			sicily_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						is_permanent_claim = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			200 = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						is_permanent_claim = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			201 = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						is_permanent_claim = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
+	#TODO
 	retake_messina = {
 		position = 6
 		icon = retake_messina
@@ -274,16 +340,18 @@ pisan_missions_2 = {
 			amalfi_all_over
 		}
 		provinces_to_highlight = {
-			# highlight if your historical capital is not owned by you
-			province_id = 115
+			province_id = 124
 		}
 		trigger = {
-			# finire di possedere il sud italia
+			ROOT = {
+				owns_core_province = 124
+			}
+			124 = {
+				culture = tuscan
+			}
 		}
 		effect = {
-			# LOCAL UNREST IN FLORENCE -10
-			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
-			# PRESTIGE?
+			# TODO
 		}
 	}
 	# TODO
@@ -329,7 +397,6 @@ pisan_missions_3 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	# TODO
 	restore_porto_pisano = {
 		position = 1
 		icon = restore_porto_pisano
@@ -337,19 +404,28 @@ pisan_missions_3 = {
 			# None
 		}
 		provinces_to_highlight = {
-			province_id = 116
+			province_id = 115
 		}
 		trigger = {
-			116 = {
+			115 = {
 				has_building = dock
 				has_building = shipyard
 			}
 		}
 		effect = {
-			#What can I do? 10 years increment of domestic trade power?
+			115 = {
+				add_province_modifier = {
+					name = "porto_pisano"
+					duration = 3650
+				}
+			}
+			add_country_modifier = {
+				# sailors and ship cost
+				name = "funding_the_fleet"
+				duration = 7300
+			}
 		}
 	}
-	# TODO
 	archbishop_of_the_tyrrhenian = {
 		position = 3
 		icon = archbishop_of_the_tyrrhenian
@@ -358,19 +434,22 @@ pisan_missions_3 = {
 			rebuild_the_merchant_fleet
 		}
 		provinces_to_highlight = {
-			region = corsica_sardinia_area
-			NOT = {
-				owned_by = ROOT
+			OR = {
+				area = corsica_sardinia_area
 			}
-			# highlight if your historical capital is not owned by you
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		trigger = {
 			corsica_sardinia_area = {
-				owned_by = ROOT
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = catholic
 			}
-			# TODO make that every province must have the same religion that Pisa has
 		}
 		effect = {
+			add_accepted_culture = sardinian
 			tunisia_area = {
 				limit = {
 					NOT = {
@@ -402,17 +481,23 @@ pisan_missions_3 = {
 		required_missions = {
 			archbishop_of_the_tyrrhenian
 		}
-		trigger = {
-			200 = {
-				owned_by = ROOT
+		provinces_to_highlight = {
+			OR = {
+				area = baleares_area
 			}
-			201 = {
-				owned_by = ROOT
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			baleares_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
-			# Trade ships building cost -15%
-			# Trigger event "Le catene del porto pisano"
+			# Todo
+			# Give holy wars to all those provinces that have a border with the baleares and are muslim
 		}
 	}
 	# TODO
@@ -432,35 +517,53 @@ pisan_missions_3 = {
 			# You can even reduce Venice trading efficiency!
 		}
 	}
-	# TODO
 	leave_no_thrace = {
 		position = 7
 		icon = leave_no_thrace
 		required_missions = {
 			pelops_and_pisas
 		}
+		provinces_to_highlight = {
+			OR = {
+				area = thrace_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
 		trigger = {
-			112 = {
-				is_strongest_trade_power = ROOT
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = catholic
 			}
 		}
 		effect = {
-			# Start some sort of crisis with venice that could lead to war
-			# You can even reduce Venice trading efficiency!
+			# THIS ONE BREAKS THE GAME
+			#add_country_modifier = "leave_no_thrace_modifier"
 		}
 	}
-	# TODO
 	the_last_republic = {
 		position = 9
 		icon = the_last_republic
 		required_missions = {
 			unum_mare
 		}
+		provinces_to_highlight = {
+			province_id = 112
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
 		trigger = {
-			# Own venezia
+			owns_core_province = 112
 		}
 		effect = {
-			#
+			add_prestige = 15
+			add_country_modifier = {
+				name = "the_old_venetian_embassies"
+				duration = -1
+			}
 		}
 	}
 }
@@ -473,26 +576,33 @@ pisan_missions_4 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	# TODO
 	rebuild_the_merchant_fleet = {
 		position = 2
 		icon = rebuild_the_merchant_fleet
 		required_missions = {
 			restore_porto_pisano
-			filling_the_coffer
+			display_of_wealth
 		}
 		provinces_to_highlight = {
-			region = corsica_sardinia_area
-			NOT = {
-				owned_by = ROOT
-			}
+			province_id = 115
 		}
 		trigger = {
 			navy_size_percentage = 1
-			num_of_light_ship = 10
+			num_of_light_ship = 15
 		}
 		effect = {
-			#What can I do? 10 years increment of domestic trade power?
+			# Permanent claim on Sardinia and Corsica
+			corsica_sardinia_area = {
+				limit = {
+					NOT = {
+						is_claim = ROOT
+					}
+					NOT = {
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 	# TODO
@@ -504,11 +614,6 @@ pisan_missions_4 = {
 			ties_with_the_church
 		}
 		provinces_to_highlight = {
-			region = corsica_sardinia_area
-			NOT = {
-				owned_by = ROOT
-			}
-			# highlight if your historical capital is not owned by you
 		}
 		trigger = {
 			tunisia_area = {
@@ -521,7 +626,6 @@ pisan_missions_4 = {
 			# Evento che vuole far costruire una statua in memoria di Kinzica?
 		}
 	}
-	# Here the player gets a claim on the ottomans and byzantium
 	# TODO
 	back_to_first_crusade = {
 		position = 5
@@ -613,20 +717,27 @@ pisan_missions_5 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	# TODO
-	filling_the_coffer = {
+	display_of_wealth = {
 		position = 1
 		icon = ties_with_the_church
 		required_missions = {
 		}
 		trigger = {
-			# Pisa has at least X amount of gold coins
+			# Too easy with the loans
+			share_of_starting_income = 1.3
+			treasury = 250
+			115 = {
+				has_building = church
+			}
+			NOT = {
+				num_of_loans = 1
+			}
 		}
 		effect = {
-			# THIS GIVES WAY TO PISA TO RESTORE THE OLD COLONIES IN THE MEDITERRANEAN
+			add_prestige = 20
+			add_mercantilism = 3
 		}
 	}
-	# TODO
 	ties_with_the_church = {
 		position = 3
 		icon = ties_with_the_church
@@ -634,14 +745,38 @@ pisan_missions_5 = {
 		}
 		trigger = {
 			# Pisa has cathedral
-			# Papal controller is pisa
-			# Pisa has at least 120 friendship with the pope
+			115 = {
+				is_capital = yes
+				owned_by = ROOT
+				has_building = cathedral
+			}
+			OR = {
+				# Papal controller is pisa
+				PIS = {
+					is_papal_controller = yes
+				}
+				# Pisa has at least 120 friendship with the pope
+				any_country = {
+					is_papal_controller = yes
+					alliance_with = PIS
+				}
+			}
 		}
 		effect = {
 			# THIS GIVES WAY TO PISA TO RESTORE THE OLD COLONIES IN THE MEDITERRANEAN
+			add_papal_influence = 10
+			add_faction_influence = {
+				faction = guelphs
+				influence = 25
+			}
+			add_estate_influence_modifier = {
+				estate = estate_church
+				influence = +10
+				desc = EST_VAL_PIS_POPE
+				duration = 3650
+			}
 		}
 	}
-	# Here the player gets a claim on syria
 	# TODO
 	egyptian_goods = {
 		position = 5
@@ -652,11 +787,12 @@ pisan_missions_5 = {
 		provinces_to_highlight = {
 		}
 		trigger = {
+			# Owns egypt
 		}
 		effect = {
+			# Here the player gets a claim on Syria
 		}
 	}
-	# Here the player gets a claim on syria
 	# TODO
 	back_to_second_crusade = {
 		position = 6
@@ -672,7 +808,6 @@ pisan_missions_5 = {
 		effect = {
 		}
 	}
-	# TODO
 	the_port_on_don = {
 		position = 7
 		icon = the_port_on_don
@@ -681,6 +816,7 @@ pisan_missions_5 = {
 		}
 		provinces_to_highlight = {
 			OR = {
+				# all the provinces we should own to highlight
 				province_id = 286
 			}
 			NOT = {
@@ -689,18 +825,35 @@ pisan_missions_5 = {
 		}
 		trigger = {
 			286 = {
-				owned_by = ROOT
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
-			# LOCAL UNREST IN FLORENCE -10
-			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
-			# PRESTIGE?
+			286 = {
+				change_trade_goods = chinaware
+			}
+			azov_area = {
+				limit = {
+					NOT = {
+						is_claim = ROOT
+					}
+					NOT = {
+						is_core = ROOT
+					}
+				}
+				add_claim = ROOT
+			}
+			change_price = {
+				trade_goods = chinaware
+				key = chinaware_in_pisa
+				value = 0.5
+				duration = 3650
+			}
 		}
 	}
 	# TODO
 	on_the_silk_road = {
-		position = 8
+		position = 9
 		icon = on_the_silk_road
 		required_missions = {
 			the_port_on_don
