@@ -67,24 +67,38 @@ pisan_missions_1 = {
 			# PRESTIGE?
 		}
 	}
-	# TODO
 	french_affairs = {
 		position = 6
 		icon = french_affairs
 		required_missions = {
 			amalfi_all_over
 		}
-		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 5				# how many provinces should be owned in the areas below
-				OR = {
-					area = west_pomerania_area					# this can also be region or colonial region
-					area = vorpommern_area
-				}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 201
+				province_id = 2991
+				province_id = 4696
 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			owns_core_province = 201
+			owns_core_province = 2991
+			owns_core_province = 4696
 		}
 		effect = {
 			# Claim sull'occitania
+			OR = {
+				province_id = 196
+				province_id = 200
+				province_id = 2753
+				province_id = 4391
+				province_id = 4695
+				province_id = 198
+			}
+			add_permanent_claim = ROOT
 		}
 	}
 	the_only_true_cross = {
@@ -157,7 +171,6 @@ pisan_missions_2 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	# TODO
 	wipe_the_signoria_out = {
 		icon = wipe_the_signoria_out
 		position = 2
@@ -166,11 +179,7 @@ pisan_missions_2 = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				province_id = 2978
-				province_id = 116
-			}
-			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = LAN
 			}
 		}
 		trigger = {
@@ -191,6 +200,8 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
+			# TODO Add modifier of some sort, or rule personality
+			add_mercantilism = 5
 			corsica_sardinia_area = {
 				limit = {
 					NOT = {
@@ -339,19 +350,27 @@ pisan_missions_2 = {
 		required_missions = {
 			amalfi_all_over
 		}
+		# TODO improve and highlight messina and trapani if they do not have the right culture
 		provinces_to_highlight = {
-			province_id = 124
+			area = sicilian_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		trigger = {
-			ROOT = {
-				owns_core_province = 124
+			sicilian_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 			124 = {
 				culture = tuscan
 			}
+			4736 = {
+				culture = tuscan
+			}
 		}
 		effect = {
-			# TODO
+			# TODO culture conversion cost?
 		}
 	}
 	# TODO
@@ -447,9 +466,9 @@ pisan_missions_3 = {
 				country_or_non_sovereign_subject_holds = ROOT
 				religion = catholic
 			}
+			accepted_culture = sardinian
 		}
 		effect = {
-			add_accepted_culture = sardinian
 			tunisia_area = {
 				limit = {
 					NOT = {
@@ -507,9 +526,22 @@ pisan_missions_3 = {
 		required_missions = {
 			back_to_first_crusade
 		}
+		provinces_to_highlight = {
+			OR = {
+				area = morea_area
+				area = northern_greece_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
 		trigger = {
-			112 = {
-				is_strongest_trade_power = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 7				# how many provinces should be owned in the areas below
+				OR = {
+					area = morea_area					# this can also be region or colonial region
+					area = northern_greece_area
+				}
 			}
 		}
 		effect = {
@@ -634,10 +666,26 @@ pisan_missions_4 = {
 			revenging_kinzica
 		}
 		provinces_to_highlight = {
+			OR = {
+				area = thrace_area
+				area = macedonia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		trigger = {
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
+			# TODO
 		}
 	}
 	# TODO
@@ -670,9 +718,6 @@ pisan_missions_4 = {
 			expand_to_the_mediterranean
 		}
 		trigger = {
-			112 = {
-				is_strongest_trade_power = ROOT
-			}
 		}
 		effect = {
 			# Start some sort of crisis with venice that could lead to war
