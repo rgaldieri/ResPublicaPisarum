@@ -1,0 +1,24 @@
+namespace = pisan_mission_events
+# Concilio di Empoli - Move dev from florence to Pisa
+country_event = {
+	id = pisan_mission_events.1
+	title = pisan_mission_events.1.t
+	desc = pisan_mission_events.1.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+	# Pisa accepts the event
+	option = {
+		name = "pisan_mission_events.1.a"
+		ai_chance = {
+			factor = 80
+		}
+	}
+	# Pisa refuses the event
+	option = {
+		name = "pisan_mission_events.1.b"
+		ai_chance = {
+			factor = 20
+		}
+		prestige = -20
+	}
+}

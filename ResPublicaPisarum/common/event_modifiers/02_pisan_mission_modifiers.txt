@@ -19,3 +19,24 @@ leave_no_thrace_modifier = {
 the_old_venetian_embassies = {
 	colonists = 1
 }
+
+tuscan_renaissance = {
+	local_state_maintenance_modifier = -0.2
+	local_unrest = -5
+	local_development_cost = -0.2
+	local_build_cost = -0.2
+	local_build_time = -0.2
+}
+
+sicilia_est_pisana = {
+	local_culture_conversion_cost = -0.25
+}
+
+in_supremae_dignitatis_bonus = {
+	technology_cost = -0.1
+}
+
+preparing_the_crusade = {
+	galley_cost = -0.33
+	papal_influence = 1
+}

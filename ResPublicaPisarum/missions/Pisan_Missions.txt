@@ -21,27 +21,13 @@ pisan_missions_1 = {
 		}
 		effect = {
 			# Add claim on Firenze
-			116 = {
-				if = {
-					limit = {
-						NOT = {
-							is_permanent_claim = ROOT
-							is_core = ROOT
-						}
-					}
-					add_permanent_claim = ROOT
+			if = {
+				limit = {
+					exists = LAN
 				}
-			}
-			# Add claim on Arezzo
-			2978 = {
-				if = {
-					limit = {
-						NOT = {
-							is_permanent_claim = ROOT
-							is_core = ROOT
-						}
-					}
-					add_permanent_claim = ROOT
+				add_casus_belli = {
+					target = LAN
+					type = cb_vassalize_mission
 				}
 			}
 		}
@@ -156,6 +142,7 @@ pisan_missions_1 = {
 				add_curia_treasury = 100
 				add_treasury = -100
 			}
+			add_adm_power = 50
 		}
 	}
 }
@@ -171,6 +158,7 @@ pisan_missions_2 = {
 		tag = PIS
 	}
 	has_country_shield = yes
+	# TODO
 	wipe_the_signoria_out = {
 		icon = wipe_the_signoria_out
 		position = 2
@@ -200,8 +188,7 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
-			# TODO Add modifier of some sort, or rule personality
-			add_mercantilism = 5
+			add_splendor = 25
 			corsica_sardinia_area = {
 				limit = {
 					NOT = {
@@ -243,7 +230,8 @@ pisan_missions_2 = {
 			}
 		}
 		trigger = {
-			# At least four provinces must be owned by Pisa
+			# TRIGGER EMPOLI COUNCIL EVENT
+			has_institution = renaissance
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 4
 				OR = {
@@ -258,7 +246,12 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
-			# TODO
+			tuscany_area = {
+				add_province_modifier = {
+					name = "tuscan_renaissance"
+					duration = 5475
+				}
+			}
 		}
 	}
 	# TODO
@@ -274,7 +267,12 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
-			# Trade ships building cost -15%
+			add_navy_tradition = 15
+			change_price = {
+				trade_goods = wine
+				value = 0.5
+				duration = 3650
+			}
 			# Trigger event "Le catene del porto pisano"
 		}
 	}
@@ -343,10 +341,9 @@ pisan_missions_2 = {
 			}
 		}
 	}
-	#TODO
 	retake_messina = {
-		position = 6
 		icon = retake_messina
+		position = 6
 		required_missions = {
 			amalfi_all_over
 		}
@@ -358,7 +355,7 @@ pisan_missions_2 = {
 			}
 		}
 		trigger = {
-			sicilian_area = {
+			sicily_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -370,10 +367,16 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
-			# TODO culture conversion cost?
+			add_mercantilism = 5
+			# TODO meh, not sure I really like it
+			sicily_area = {
+				add_province_modifier = {
+					name = "sicilia_est_pisana"
+					duration = 7200
+				}
+			}
 		}
 	}
-	# TODO
 	In_supremae_dignitatis = {
 		icon = In_supremae_dignitatis
 		position = 8
@@ -383,7 +386,12 @@ pisan_missions_2 = {
 			province_id = 116
 		}
 		trigger = {
-			# ALL provinces with more than 20 dev and 10 admin must have an university
+			# TODO change to ALL provinces with more than 20 dev and 10 admin must have an university
+			num_of_owned_provinces_with = {
+				development = 20
+				value = 10				# how many provinces should have the necessary building / buildings
+				has_building = university
+			}
 			# Both Pisa and siena must have an university
 			AND = {
 				116 = {
@@ -397,9 +405,13 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
-			# Add prestige, add some bonuses, maybe tech cost -5%
 			ROOT = {
 				add_prestige = 20
+				add_splendor = 10
+				add_country_modifier = {
+					name = "in_supremae_dignitatis_bonus"
+					duration = -1
+				}
 			}
 		}
 	}
@@ -469,6 +481,10 @@ pisan_missions_3 = {
 			accepted_culture = sardinian
 		}
 		effect = {
+			add_country_modifier = {
+				name = "preparing_the_crusade"
+				duration = 7200
+			}
 			tunisia_area = {
 				limit = {
 					NOT = {
@@ -515,7 +531,6 @@ pisan_missions_3 = {
 			}
 		}
 		effect = {
-			# Todo
 			# Give holy wars to all those provinces that have a border with the baleares and are muslim
 		}
 	}
@@ -830,9 +845,28 @@ pisan_missions_5 = {
 			revenging_kinzica
 		}
 		provinces_to_highlight = {
+			OR = {
+				area = bahari_area
+				area = palestine_area
+				area = delta_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		trigger = {
-			# Owns egypt
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
 			# Here the player gets a claim on Syria

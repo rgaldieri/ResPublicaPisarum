@@ -2361,5 +2361,7 @@
  # PISAN MODIFIERS
  funding_the_fleet:0 "Funding The Fleet"
  desc_funding_the_fleet:0 "TODO"
- followers_of_the_true_cross:0 "Funding The Fleet"
+ followers_of_the_true_cross:0 "Followers cross"
  desc_followers_of_the_true_cross:0 "TODO"
+ tuscan_renaissance:0 "tuscan_renaissance"
+ desc_tuscan_renaissance:0 "TODO"
