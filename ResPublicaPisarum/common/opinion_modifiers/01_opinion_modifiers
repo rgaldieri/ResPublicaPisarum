@@ -1,0 +1,5 @@
+congress_of_empoli = {
+	opinion = -50
+	yearly_decay = 5
+	min = -50
+}

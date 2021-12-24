@@ -1,6 +1,7 @@
 namespace = pisan_events
-# Mazzascudo
-province_event = {
+# Mazzascudo events
+# Death of a capitano
+country_event = {
 	id = pisan_events.1
 	title = pisan_events.1.t
 	desc = pisan_events.1.d
@@ -9,8 +10,8 @@ province_event = {
 	fire_only_once = no
 	# On average, how often should it happen?
 	mean_time_to_happen = {
-		months = 120
-	
+		months = 240
+		# TODO Add modifier based on army tradition
 		#modifier = {
 		#	factor = 0.8
 		#	NOT = { stability = 0 }
@@ -18,23 +19,21 @@ province_event = {
 	}
 	# Triggering conditions
 	trigger = {
-		tag = PIS
-		is_subject = no
-		is_at_war = no
-		115 = { owned_by = ROOT }
-	}
-	# Play the Mazzascudo
-	option = {
-		name = "pisan_events.1.a"
-		ai_chance = {
-			factor = 70
+		has_country_flag = mazzascudoù
+		has_leaders = {
+			value = 1
+			type = general
+			include_monarch = no
+			include_heir = no
 		}
 	}
-	# Skip the mazzascudo
 	option = {
-		name = "pisan_events.1.b"
+		name = "pisan_events.1.a"
+		kill_leader = {
+			type = general
+		}
 		ai_chance = {
-			factor = 30
+			factor = 100
 		}
 	}
 }
