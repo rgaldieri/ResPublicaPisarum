@@ -1,0 +1,40 @@
+namespace = pisan_events
+# Mazzascudo
+province_event = {
+	id = pisan_events.1
+	title = pisan_events.1.t
+	desc = pisan_events.1.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	fire_only_once = no
+	# On average, how often should it happen?
+	mean_time_to_happen = {
+		months = 120
+	
+		#modifier = {
+		#	factor = 0.8
+		#	NOT = { stability = 0 }
+		#}
+	}
+	# Triggering conditions
+	trigger = {
+		tag = PIS
+		is_subject = no
+		is_at_war = no
+		115 = { owned_by = ROOT }
+	}
+	# Play the Mazzascudo
+	option = {
+		name = "pisan_events.1.a"
+		ai_chance = {
+			factor = 70
+		}
+	}
+	# Skip the mazzascudo
+	option = {
+		name = "pisan_events.1.b"
+		ai_chance = {
+			factor = 30
+		}
+	}
+}

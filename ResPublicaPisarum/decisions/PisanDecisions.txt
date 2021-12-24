@@ -1,0 +1,93 @@
+country_decisions = {
+	enable_mazzascudo = {
+		major = no
+		potential = {
+			tag = PIS
+			is_subject = no
+			NOT = {
+				mil_tech = 13
+				has_country_flag = mazzascudo
+			}
+		}
+		allow = {
+			stability = 0
+			army_size_percentage = .5
+		}
+		effect = {
+			add_country_modifier = {
+				name = mazzascudo
+				duration = -1
+			}
+			set_country_flag = mazzascudo
+		}
+		# TODO
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	disable_mazzascudo = {
+		major = no
+		potential = {
+			has_country_flag = mazzascudo
+		}
+		allow = {
+			has_country_flag = mazzascudo
+		}
+		effect = {
+			remove_country_modifier = mazzascudo
+			clr_country_flag = mazzascudo
+		}
+		# TODO
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	reverse_congresso_di_empoli = {
+		major = no
+		potential = {
+			tag = PIS
+			is_subject = no
+			116 = {
+				owned_by = ROOT
+			}
+		}
+		allow = {
+			PIS = {
+				faction_in_power = ghibellines
+			}
+			if = {
+				limit = {
+					exists = SIE
+					has_factions = yes
+				}
+				faction_in_power = ghibellines
+			}
+			if = {
+				limit = {
+					exists = SIE
+					has_factions = yes
+				}
+				SIE = {
+					faction_in_power = ghibellines
+				}
+			}
+			if = {
+				limit = {
+					exists = PGA
+					has_factions = yes
+				}
+				PGA = {
+					faction_in_power = ghibellines
+				}
+			}
+			# Pisa, Siena, Arezzo (if independent), Terni must be ghibellina
+			# 
+		}
+		effect = {
+			# If firenze exists, it will hate pisa
+			# All Guelfi will hate Pisa
+		}
+		ai_will_do = {
+		}
+	}
+}
