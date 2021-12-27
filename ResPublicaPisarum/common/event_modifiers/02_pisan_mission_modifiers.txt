@@ -40,3 +40,9 @@ preparing_the_crusade = {
 	galley_cost = -0.33
 	papal_influence = 1
 }
+
+the_marca_della_tuscia = {
+	republican_tradition = -0.5
+	province_warscore_cost = -0.1
+	core_creation = -0.1
+}
