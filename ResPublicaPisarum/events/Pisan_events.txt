@@ -10,7 +10,7 @@ country_event = {
 	fire_only_once = no
 	# On average, how often should it happen?
 	mean_time_to_happen = {
-		months = 240
+		months = 360
 		# TODO Add modifier based on army tradition
 		#modifier = {
 		#	factor = 0.8
@@ -19,7 +19,7 @@ country_event = {
 	}
 	# Triggering conditions
 	trigger = {
-		has_country_flag = mazzascudoù
+		has_country_flag = mazzascudo
 		has_leaders = {
 			value = 1
 			type = general
@@ -35,5 +35,86 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
+	}
+}
+
+# Injured captain
+country_event = {
+	id = pisan_events.2
+	title = pisan_events.2.t
+	desc = pisan_events.2.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	fire_only_once = no
+	mean_time_to_happen = {
+		months = 360
+		# TODO Add modifier based on army tradition
+		#modifier = {
+		#	factor = 0.8
+		#	NOT = { stability = 0 }
+		#}
+	}
+	trigger = {
+		has_country_flag = mazzascudo
+		has_leaders = {
+			value = 1
+			type = general
+			include_monarch = no
+			include_heir = no
+		}
+	}
+	option = {
+		name = "pisan_events.2.a"
+		random = {
+			chance = 50
+			kill_leader = {
+				type = general
+			}
+		}
+	}
+	option = {
+		name = "pisan_events.2.b"
+		random = {
+			chance = 25
+			add_treasury = -50
+			kill_leader = {
+				type = general
+			}
+		}
+	}
+}
+
+# A Champion arises
+country_event = {
+	id = pisan_events.3
+	title = pisan_events.3.t
+	desc = pisan_events.3.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	fire_only_once = no
+	mean_time_to_happen = {
+		months = 240
+		# TODO Add modifier based on army tradition
+		#modifier = {
+		#	factor = 0.8
+		#	NOT = { stability = 0 }
+		#}
+	}
+	trigger = {
+		has_country_flag = mazzascudo
+	}
+	# Recruit him
+	option = {
+		name = "pisan_events.3.a"
+		add_prestige = -10
+		create_general = {
+			tradition = 75
+		}
+	}
+	# Keep him in the troops (Lack of meritocracy)
+	option = {
+		name = "pisan_events.3.b"
+		add_republican_tradition = -10
+		add_army_tradition = 5
 	}
 }

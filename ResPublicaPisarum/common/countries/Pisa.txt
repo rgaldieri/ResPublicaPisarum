@@ -73,6 +73,7 @@ monarch_names = {
 	"Pasquale #0" = 0
 	"Pietro #0" = 0
 	"Roberto #0" = 0
+	"Rustichello #0" = 5
 	"Sergio #0" = 0
 	"Severino #0" = 0
 	"Ugo #0" = 0
@@ -83,21 +84,28 @@ monarch_names = {
 	"Ludovica #0" = -1
 	"Mariangela #0" = -1
 	"Petronilla #0" = -1
+	"Kinzika #0" = -1
+	"Camilla #0" = -1
 }
 
 leader_names = {
+	# Custom
+	"de' Sismondi"
+	Sismondi
+	Moriconi
+	Orlandi
+	Visconti
+	"della Faggiola"
+	"della Rocca"
+	"d'Appiano"
+	Raspanti
+	Bergolini
+	# Original
 	"dell Agnello"
-	Amelia
-	Appiani
-	"d'Appiani d'Aragona"
-	Barone
-	Bartoli
 	Barzagli
 	Basile
 	Birindelli
-	Brunforte
 	Buonarroti
-	Butteri
 	Capitani
 	Chiellini
 	Conti
@@ -105,37 +113,27 @@ leader_names = {
 	Fibonacci
 	Galilei
 	Gambacorta
-	Ganza
 	Gentileschi
 	"della Gherardesca"
-	Gori
 	Greco
 	Grosso
 	Guidi
 	Letta
-	Lombardi
 	Mancini
 	Marchetti
 	Marianelli
-	Notaro
-	Oddo
 	Pacinotti
 	Pesce
 	"del Piero"
 	Pini
 	Pisano
 	Pontecorvo
-	Pozzi
 	"de Rossi"
-	Ruffo
 	Sonnino
 	Tabucchi
-	Tosetti
-	Tumicelli
 	"della Ubaldini"
 	Ulivelli
 	Ventura
-	Zaccardo
 }
 
 ship_names = {

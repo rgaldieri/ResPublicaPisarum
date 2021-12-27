@@ -157,4 +157,32 @@ country_decisions = {
 			# TODO
 		}
 	}
+	marca_della_tuscia = {
+		potential = {
+			tag = PIS
+			is_subject = no
+			NOT = {
+				is_year = 1550
+				has_country_flag = marca_della_tuscia
+			}
+		}
+		allow = {
+			ROOT = {
+				owns_core_province = 115				# Pisa
+				owns_core_province = 116				# Florence
+				owns_core_province = 117				# Siena
+				owns_core_province = 2978				# Arezzo
+				owns_core_province = 109				# Mantua
+				owns_core_province = 106				# Modena
+				owns_core_province = 4730				# Bologna
+			}
+		}
+		effect = {
+			set_country_flag = marca_della_tuscia
+		}
+		# TODO
+		ai_will_do = {
+			factor = 0
+		}
+	}
 }
