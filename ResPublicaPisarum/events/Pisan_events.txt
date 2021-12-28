@@ -1,10 +1,7 @@
 namespace = pisan_events
 #
-#
 # Mazzascudo events
 #
-#
-
 # Death of a capitano
 country_event = {
 	id = pisan_events.1
@@ -125,25 +122,15 @@ country_event = {
 }
 
 #
-#
-# END Mazzascudo events
-#
-#
-
-#
-#
 # Marca della Tuscia events
 #
-#
-
 # Marriage with Bavaria
 country_event = {
-	id = pisan_events.tuscia.1
-	title = pisan_events.tuscia.1.t
-	desc = pisan_events.tuscia.1.d
+	id = pisan_events.4
+	title = pisan_events.4.t
+	desc = pisan_events.4.d
 	picture = ADVISOR_eventPicture	# TODO
 	fire_only_once = yes
-
 	major_trigger = {
 		capital_scope = {
 			OR = {
@@ -183,23 +170,65 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
-		name = pisan_events.tuscia.1.a
+		name = pisan_events.4.a
 		trigger = {
 			ROOT = {
 				is_monarchy = no
 			}
 		}
 	}
-
 	option = {
-		name = pisan_events.tuscia.1.b
+		name = pisan_events.4.b
 		trigger = {
 			ROOT = {
 				is_monarchy = yes
 			}
 		}
-		
+	}
+}
+
+#
+# Characters events
+#
+# Statue of Kinzica
+country_event = {
+	id = pisan_events.5
+	title = pisan_events.5.t
+	desc = pisan_events.5.d
+	picture = ADVISOR_eventPicture	# TODO
+	fire_only_once = yes
+	trigger = {
+		tag = PIS
+		religion = catholic
+		baleares_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	is_mtth_scaled_to_size = 1
+	mean_time_to_happen = {
+		months = 18
+	}
+	# Build the statue
+	option = {
+		name = pisan_events.5.a
+		ai_chance = {
+			factor = 66
+		}
+		add_treasury = -100
+		add_republican_tradition = 15
+		115 = {
+			add_province_modifier = {
+				name = statue_of_kinzica
+				duration = -1
+			}
+		}
+	}
+	# Refuse to build
+	option = {
+		name = pisan_events.5.b
+		add_republican_tradition = -15
+		add_prestige = -10
 	}
 }

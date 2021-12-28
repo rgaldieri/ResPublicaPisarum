@@ -4,3 +4,8 @@ mazzascudo = {
 	manpower_recovery_speed = -0.1
 	land_maintenance_modifier = 0.1
 }
+
+statue_of_kinzica = {
+	local_build_cost = -0.15
+	allowed_num_of_buildings = 1
+}
