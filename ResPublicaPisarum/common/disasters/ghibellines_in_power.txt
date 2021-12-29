@@ -1,0 +1,59 @@
+ghibellines_in_power = {
+	potential = {
+		has_faction = ghibellines
+		faction_influence = {
+			faction = ghibellines
+			influence = 75
+		}
+	}
+	can_start = {
+		has_faction = ghibellines
+		faction_influence = {
+			faction = ghibellines
+			influence = 90
+		}
+	}
+	can_stop = {
+		OR = {
+			NOT = {
+				has_faction = ghibellines
+			}
+			NOT = {
+				faction_influence = {
+					faction = ghibellines
+					influence = 90
+				}
+			}
+		}
+	}
+	progress = {
+		# TODO ADD MORE DEPENDING ON OTHER EVENTS
+		modifier = {
+			factor = 1
+			faction_influence = {
+				faction = ghibellines
+				influence = 90
+			}
+		}
+	}
+	# DISASTER ENDS HERE
+	can_end = {
+		OR = {
+			NOT = {
+				has_faction = ghibellines
+			}
+			had_country_flag = {
+				flag = ghibellines_in_power_flag
+				days = 3650
+			}
+		}
+		stability = 2
+	}
+	# ACTIVE FOR AS LONG AS THE DISASTER IS
+	modifier = {
+		# TODO
+	}
+	# TODO
+	#on_start = estate_disasters.1
+	#on_end = estate_disasters.2
+}
