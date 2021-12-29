@@ -1,0 +1,79 @@
+namespace = tuscan_factions_events
+
+# Ghibellines disaster starts
+country_event = {
+	id = tuscan_factions.1
+	title = tuscan_factions.1.t
+	desc = tuscan_factions.1.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+    
+    mean_time_to_happen = {
+		days = 1
+	}
+    immediate = {
+        set_country_flag = ghibellines_in_power_flag
+    }
+    #TODO add options
+	option = {
+		name = "tuscan_factions.1.a"
+	}
+}
+
+# Ghibellines disaster ends
+country_event = {
+	id = tuscan_factions.2
+	title = tuscan_factions.2.t
+	desc = tuscan_factions.2.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+    
+    mean_time_to_happen = {
+		days = 1
+	}
+    #TODO add options
+	option = {
+		name = "tuscan_factions.2.a"
+	}
+}
+
+namespace = tuscan_factions_events
+
+# guelphs disaster starts
+country_event = {
+	id = tuscan_factions.3
+	title = tuscan_factions.3.t
+	desc = tuscan_factions.3.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+    
+    mean_time_to_happen = {
+		days = 1
+	}
+    immediate = {
+        set_country_flag = guelphs_in_power_flag
+    }
+    #TODO add options
+	option = {
+		name = "tuscan_factions.3.a"
+	}
+}
+
+# guelphs disaster ends
+country_event = {
+	id = tuscan_factions.4
+	title = tuscan_factions.4.t
+	desc = tuscan_factions.4.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+    
+    mean_time_to_happen = {
+		days = 1
+	}
+    # What if we make a country a theocracy if the disaster ends in 10 years?
+    # How can we tie this to the pope?
+    #TODO add options
+	option = {
+		name = "tuscan_factions.4.a"
+	}
+}

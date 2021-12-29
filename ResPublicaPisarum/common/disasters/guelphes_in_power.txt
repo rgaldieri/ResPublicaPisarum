@@ -1,26 +1,26 @@
-ghibellines_in_power = {
+guelphes_in_power = {
 	potential = {
-		has_faction = ghibellines
+		has_faction = guelphs
 		faction_influence = {
-			faction = ghibellines
+			faction = guelphs
 			influence = 75
 		}
 	}
 	can_start = {
-		has_faction = ghibellines
+		has_faction = guelphs
 		faction_influence = {
-			faction = ghibellines
+			faction = guelphs
 			influence = 90
 		}
 	}
 	can_stop = {
 		OR = {
 			NOT = {
-				has_faction = ghibellines
+				has_faction = guelphs
 			}
 			NOT = {
 				faction_influence = {
-					faction = ghibellines
+					faction = guelphs
 					influence = 90
 				}
 			}
@@ -31,7 +31,7 @@ ghibellines_in_power = {
 		modifier = {
 			factor = 1
 			faction_influence = {
-				faction = ghibellines
+				faction = guelphs
 				influence = 90
 			}
 		}
@@ -40,10 +40,10 @@ ghibellines_in_power = {
 	can_end = {
 		OR = {
 			NOT = {
-				has_faction = ghibellines
+				has_faction = guelphs
 			}
 			had_country_flag = {
-				flag = ghibellines_in_power_flag
+				flag = guelphs_in_power_flag
 				days = 3650
 			}
 		}
@@ -52,11 +52,11 @@ ghibellines_in_power = {
 	# ACTIVE FOR AS LONG AS THE DISASTER IS
 	modifier = {
         global_unrest = 2
-		papal_influence = -1
+        #TODO Add something else
 	}
 
-	on_start = tuscan_factions.1
-	on_end = tuscan_factions.2
+	on_start = tuscan_factions.3
+	on_end = tuscan_factions.4
 
 	# TODO
 	#on_monthly = {
