@@ -125,7 +125,7 @@ country_event = {
 # Marca della Tuscia events
 #
 #
-z# Characters events
+# Characters events
 #
 # Statue of Kinzica
 country_event = {

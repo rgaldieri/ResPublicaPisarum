@@ -168,13 +168,13 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 115				# Pisa
-			owns_core_province = 116				# Florence
-			owns_core_province = 117				# Siena
-			owns_core_province = 2978				# Arezzo
-			owns_core_province = 109				# Mantua
-			owns_core_province = 106				# Modena
-			owns_core_province = 4730				# Bologna
+			owns_core_province = 115			# Pisa
+			owns_core_province = 116			# Florence
+			owns_core_province = 117			# Siena
+			owns_core_province = 2978			# Arezzo
+			owns_core_province = 109			# Mantua
+			owns_core_province = 106			# Modena
+			owns_core_province = 4730			# Bologna
 			is_free_or_tributary_trigger = yes
 			stability = 0
 		}
@@ -183,15 +183,20 @@ country_decisions = {
 				# TODO province_id = 410			#Baghdad
 			}
 			OR = {
-				NOT = { owned_by = ROOT }
-				NOT = { is_core = ROOT }
+				NOT = {
+					owned_by = ROOT
+				}
+				NOT = {
+					is_core = ROOT
+				}
 			}
+		}
 		effect = {
 			set_country_flag = marca_della_tuscia
 			add_republican_tradition = -50
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = the_marca_della_tuscia
-				duration = -1  
+				duration = -1
 			}
 		}
 		# TODO

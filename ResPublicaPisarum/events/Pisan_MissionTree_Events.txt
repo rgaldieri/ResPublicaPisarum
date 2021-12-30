@@ -19,6 +19,6 @@ country_event = {
 		ai_chance = {
 			factor = 20
 		}
-		prestige = -20
+		add_prestige = -20
 	}
 }

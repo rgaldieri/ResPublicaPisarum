@@ -3,7 +3,7 @@ vassal = {
 	first = LAN
 	second = PIS
 	start_date = 1444.1.1
-	end_date = 1445.3.12
+	end_date = 1494.3.12
 }
 
 # Pope and Perugia

@@ -4,8 +4,9 @@
 # country
 # TODO is this the best way of doing it?
 on_startup = {
+	# Add factions to whoever needs them
 	if = {
-		AND = {
+		limit = {
 			culture_group = latin
 			NOT = {
 				culture = dalmatian
@@ -13,12 +14,35 @@ on_startup = {
 				tag = PAP
 			}
 		}
-
+		add_faction = guelphs
+		add_faction = ghibellines
+		add_faction_influence = {
+			faction = ghibellines
+			influence = 50
+		}
 	}
-	add_faction = guelphs
-	add_faction = ghibellines
-	add_faction_influence = {
-		faction = ghibellines
-		influence = 50
+}
+
+# ROOT = New vassal, FROM = Overlord
+on_create_vassal = {
+	if = {
+		limit = {
+			ROOT = {
+				culture = tuscan
+			}
+		}
+		add_country_modifier = {
+			name = tuscan_subjugation
+			duration = 3650
+		}
+	}
+}
+
+on_country_released = {
+	if = {
+		limit = {
+			has_country_modifier = tuscan_subjugation
+		}
+		remove_country_modifier = tuscan_subjugation
 	}
 }

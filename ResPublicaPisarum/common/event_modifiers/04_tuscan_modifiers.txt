@@ -1,0 +1,3 @@
+tuscan_subjugation = {
+	liberty_desire = 25
+}
