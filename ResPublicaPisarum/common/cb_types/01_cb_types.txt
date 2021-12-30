@@ -9,8 +9,6 @@
 # FROM = target
 cb_convert_to_guelphs = {
 	valid_for_subject = no
-	is_triggered_only = yes
-	months = 240
 	prerequisites = {
 		# Can revolutionaries even have factions?
 		is_revolutionary = no
@@ -27,8 +25,30 @@ cb_convert_to_guelphs = {
 		# Target
 		FROM = {
 			faction_in_power = ghibellines
-			is_subject = no
 		}
 	}
-	war_goal = convert_faction_to_guelphs
+	war_goal = convert_tuscan_faction
+}
+
+cb_convert_to_ghibellines = {
+	valid_for_subject = no
+	prerequisites = {
+		# Can revolutionaries even have factions?
+		is_revolutionary = no
+		# It makes sense to have them as neighbros
+		is_neighbor_of = FROM
+		# Truce? no CB!
+		NOT = {
+			truce_with = FROM
+		}
+		# Guelphs must be in power
+		ROOT = {
+			faction_in_power = ghibellines
+		}
+		# Target
+		FROM = {
+			faction_in_power = guelphs
+		}
+	}
+	war_goal = convert_tuscan_faction
 }
