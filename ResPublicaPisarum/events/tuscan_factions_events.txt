@@ -77,3 +77,43 @@ country_event = {
 		name = "tuscan_factions.4.a"
 	}
 }
+
+# Disable the factions if conditions are met
+country_event = {
+	id = tuscan_factions.5
+	title = tuscan_factions.5.t
+	desc = tuscan_factions.5.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+
+    mean_time_to_happen = {
+		months = 12
+	}
+
+	trigger = {
+		# TODO could spice this up a bit
+		is_year = 1600
+		# TODO add event fallen of rome or fallen of emprire
+		NOT = {
+			has_global_flag = the_fall_of_rome
+			has_global_flag = the_fall_of_the_empire
+		}
+	}
+    immediate = {
+		every_country = {
+			limit = {
+				has_factions = yes
+				OR = {
+					has_faction = guelphs
+					has_faction = ghibellines
+				}
+			}
+			remove_faction = guelphs
+			remove_faction = ghibellines
+		}
+	}
+	#TODO add options
+	option = {
+		name = "tuscan_factions.5.a"
+	}
+}
