@@ -32,25 +32,29 @@ pisan_missions_1 = {
 			}
 		}
 	}
-	# TODO
-	german_marriages = {
+	italian_bankers = {
 		position = 4
-		icon = german_marriages
+		icon = italian_bankers
 		required_missions = {
 			pisan_pride
 			a_different_granducato
 		}
-		provinces_to_highlight = {
-			# highlight if your historical capital is not owned by you
-			province_id = 115
-		}
 		trigger = {
-			# USE VARIABLE TO COMPARE PISA AND FLORENCE DEVELOPMENT
+			all_neighbor_country = {
+				num_of_loans = 1
+			}
+			PIS = {
+				num_of_loans = 0
+				NOT = {
+					inflation = 1
+				}
+				prestige = 80
+				crown_land_share = 60
+			}
 		}
 		effect = {
-			# LOCAL UNREST IN FLORENCE -10
-			# DEVELOPMENT COST IN ITALY -10% FOR X MONTHS
-			# PRESTIGE?
+			add_years_of_income = 0.5
+			add_mercantilism = 10
 		}
 	}
 	french_affairs = {
