@@ -143,8 +143,11 @@ pisan_missions_1 = {
 						religion = catholic
 					}
 				}
-				add_curia_treasury = 100
-				add_treasury = -100
+				country_event = {
+					id = pisan_mission_events.2
+					days = 30
+					tooltip = FOLLOWERS_TRUE_CROSS_EVENT
+				}
 			}
 			add_adm_power = 50
 		}

@@ -3,3 +3,15 @@ congress_of_empoli = {
 	yearly_decay = 5
 	min = -50
 }
+
+curia_not_compensated  = {
+	opinion = -50
+	yearly_decay = 3
+	min = -50
+}
+
+ghibellines_property = {
+	opinion = -25
+	yearly_decay = 5
+	min = -100
+}

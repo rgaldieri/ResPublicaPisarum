@@ -22,3 +22,42 @@ country_event = {
 		add_prestige = -20
 	}
 }
+
+country_event = {
+	id = pisan_mission_events.2
+	title = pisan_mission_events.2.t
+	desc = pisan_mission_events.2.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+	# Pisa donate to curia
+	option = {
+		name = "pisan_mission_events.2.a"
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			ROOT = {
+				religion = catholic
+			}
+		}
+		add_curia_treasury = 100
+		add_treasury = -100
+	}
+	# Pisa refuses to pay
+	option = {
+		name = "pisan_mission_events.2.b"
+		ai_chance = {
+			factor = 80
+		}
+		add_prestige = -20
+		if = {
+			limit = {
+				exists = PAP
+			}
+			add_opinion = {
+				who = PAP
+				modifier = curia_not_compensated
+			}
+		}
+	}
+}

@@ -1,3 +1,16 @@
 tuscan_subjugation = {
 	liberty_desire = 25
 }
+
+faction_dissidents = {
+	global_unrest = -3
+}
+
+not_answering_rome = {
+	tolerance_own = -5
+	papal_influence = -1
+}
+
+the_only_way = {
+	tolerance_heretic = -5
+}

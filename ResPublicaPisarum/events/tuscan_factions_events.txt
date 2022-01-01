@@ -28,6 +28,10 @@ country_event = {
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
     
+	immediate = {
+		clr_country_flag = bishops_predicating_against_ghibellines
+	}
+
     mean_time_to_happen = {
 		days = 1
 	}
@@ -70,6 +74,11 @@ country_event = {
     mean_time_to_happen = {
 		days = 1
 	}
+
+	immediate = {
+		clr_country_flag = bishops_predicating_against_ghibellines
+	}
+	
     # What if we make a country a theocracy if the disaster ends in 10 years?
     # How can we tie this to the pope?
     #TODO add options
@@ -93,11 +102,6 @@ country_event = {
 	trigger = {
 		# TODO could spice this up a bit
 		is_year = 1600
-		# TODO add event fallen of rome or fallen of emprire
-		NOT = {
-			has_global_flag = the_fall_of_rome
-			has_global_flag = the_fall_of_the_empire
-		}
 	}
     immediate = {
 		every_country = {
@@ -115,5 +119,239 @@ country_event = {
 	#TODO add options
 	option = {
 		name = "tuscan_factions.5.a"
+	}
+}
+
+# change of religion
+country_event = {
+	id = tuscan_factions.6
+	title = tuscan_factions.6.t
+	desc = tuscan_factions.6.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+
+    mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		remove_faction = guelphs
+		remove_faction = ghibellines
+	}
+
+	# Banish the guelphs
+	option = {
+		name = "tuscan_factions.6.a"
+		add_yearly_manpower = -0.5
+	}
+
+	# offer them to stay
+	option = {
+		name = "tuscan_factions.6.a"
+		add_country_modifier = {
+			name = faction_dissidents
+			duration = 1825
+			desc = DISSIDENTS_EVENT_DESC
+		}
+	}
+}
+
+#
+#
+# Random events if in disaster
+#
+#
+
+# Ghibellines have too much power 1
+# Not answering the pope
+country_event = {
+	id = tuscan_factions.7
+	title = tuscan_factions.7.t
+	desc = tuscan_factions.7.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+
+	# Banish the guelphs
+	option = {
+		name = "tuscan_factions.7.a"
+		add_country_modifier = { 
+			name = not_answering_rome
+			duration = 1850
+			desc = NOT_ANSWERING_ROME_TOOLTIP
+		}
+	}
+}
+
+# Ghibellines have too much power 2
+# Bishops patronizing
+# TODO add modifier based on advisors
+country_event = {
+	id = tuscan_factions.8
+	title = tuscan_factions.8.t
+	desc = tuscan_factions.8.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+
+	# Shut the bishops up
+	option = {
+		name = "tuscan_factions.8.a"
+		stability = -1
+	}
+	# Let them talk
+	option = {
+		name = "tuscan_factions.8.b"
+		trigger = {
+			NOT = {
+				has_country_flag = bishops_predicating_against_ghibellines
+			}
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			desc = EST_VAL_FURTHERED_SPOUSES_FAMILY_NOBLES
+			influence = 15
+			duration = 3650
+		}
+		set_country_flag = bishops_predicating_against_ghibellines
+	}
+}
+
+# Ghibellines have too much power 3
+# Ghibellines sick of the church
+country_event = {
+	id = tuscan_factions.9
+	title = tuscan_factions.9.t
+	desc = tuscan_factions.9.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+
+	# refusing to serve side by side
+	option = {
+		name = "tuscan_factions.9.a"
+		add_army_professionalism = -3
+	}
+
+	# Kill the bishop
+	option = {
+		name = "tuscan_factions.9.b"
+		highlight = yes
+		trigger = {
+			employed_advisor = {
+				type = theologian
+			}
+		}
+		kill_advisor = theologian
+	}
+	# Try to pacify the groups
+	option = {
+		name = "tuscan_factions.9.c"
+		add_dip_power = -50
+	}
+}
+
+# Ghibellines have too much power 4
+# The pope attempts to mediate
+country_event = {
+	id = tuscan_factions.10
+	title = tuscan_factions.10.t
+	desc = tuscan_factions.10.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+
+	# accept the papal legate
+	option = {
+		name = "tuscan_factions.10.a"
+		add_country_modifier = {
+			name = faction_dissidents
+			duration = 365
+		}
+	}
+
+	# refuse to meet the delegate
+	option = {
+		name = "tuscan_factions.10.b"
+		add_papal_influence = -15
+	}
+
+	# Kick the cardinal out of town
+	option = {
+		name = "tuscan_factions.10.c"
+		highlight = yes
+		trigger = {
+			115 = {
+				has_cardinal = yes
+			}
+		}
+		115 = {
+			remove_cardinal = yes
+		}
+	}
+}
+
+# Guelphs have too much power 1
+# Hating the others
+country_event = {
+	id = tuscan_factions.11
+	title = tuscan_factions.11.t
+	desc = tuscan_factions.11.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+
+	# accept the papal legate
+	option = {
+		name = "tuscan_factions.11.a"
+		add_country_modifier = {
+			name = the_only_way
+			duration 1850
+		}
+	}
+
+	# refuse to meet the delegate
+	option = {
+		name = "tuscan_factions.11.b"
+		add_country_modifier = {
+			name = faction_dissidents
+			duration 1850
+		}
+	}
+}
+
+# Guelphs have too much power 2
+# The emperor is displeased
+country_event = {
+	id = tuscan_factions.12
+	title = tuscan_factions.12.t
+	desc = tuscan_factions.12.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+
+	# Guelphs keep taking ghibellines stuff
+	option = {
+		name = "tuscan_factions.12.a"
+		emperor = {
+			add_opinion = {
+				who = ROOT
+			    modifier = ghibellines_property
+			}
+		}
+	}
+}
+
+# Guelphs have too much power 3
+# send gift to the curia
+country_event = {
+	id = tuscan_factions.13
+	title = tuscan_factions.13.t
+	desc = tuscan_factions.13.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+
+	# you accept to send the gift
+	option = {
+		name = "tuscan_factions.13.a"
+		add_treasury = -100
+	}
+	# refuse to pay
+	option = {
+		name = "tuscan_factions.13.b"
+		add_mercantilism = -5
 	}
 }

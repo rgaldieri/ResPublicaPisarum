@@ -58,14 +58,15 @@ ghibellines_in_power = {
 	on_start = tuscan_factions.1
 	on_end = tuscan_factions.2
 
-	# TODO
-	#on_monthly = {
-    #    events = {
-    #    }
-    #    random_events = { 
-    #            1000 = 0
-    #            100 = epidemic.3
-    #            100 = epidemic.4	
-    #    }
-	#}
+	on_monthly = {
+        events = {
+        }
+        random_events = { 
+                900 = 0
+                100 = tuscan_factions.7
+                100 = tuscan_factions.8
+                100 = tuscan_factions.9
+                200 = tuscan_factions.10
+        }
+	}
 }

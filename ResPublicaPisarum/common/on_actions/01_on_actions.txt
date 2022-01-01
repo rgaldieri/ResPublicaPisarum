@@ -46,3 +46,19 @@ on_country_released = {
 		remove_country_modifier = tuscan_subjugation
 	}
 }
+
+on_religion_change = {
+	if = {
+		limit = {
+			has_faction = guelphs
+			NOT = {
+				religion = catholic
+			}
+		}
+		country_event = {
+			id = tuscan_factions.6
+			days = 3
+			tip = GUELPHS_ARE_GONE_TOOLTIP
+		}
+	}
+}

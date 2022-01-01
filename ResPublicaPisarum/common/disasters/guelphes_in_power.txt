@@ -58,14 +58,14 @@ guelphes_in_power = {
 	on_start = tuscan_factions.3
 	on_end = tuscan_factions.4
 
-	# TODO
-	#on_monthly = {
-    #    events = {
-    #    }
-    #    random_events = { 
-    #            1000 = 0
-    #            100 = epidemic.3
-    #            100 = epidemic.4	
-    #    }
-	#}
+	on_monthly = {
+        events = {
+        }
+        random_events = { 
+                900 = 0
+                100 = tuscan_factions.11
+                100 = tuscan_factions.12
+                100 = tuscan_factions.13
+        }
+	}
 }
