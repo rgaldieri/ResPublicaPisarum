@@ -46,3 +46,8 @@ the_marca_della_tuscia = {
 	province_warscore_cost = -0.1
 	core_creation = -0.1
 }
+
+afraid_to_fight = {
+	naval_morale = -0.4
+	global_trade_power = -0.5
+}

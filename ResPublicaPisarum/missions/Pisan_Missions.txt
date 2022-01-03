@@ -261,7 +261,6 @@ pisan_missions_2 = {
 			}
 		}
 	}
-	# TODO
 	control_the_thyrrenian_sea = {
 		position = 4
 		icon = control_the_thyrrenian_sea
@@ -277,10 +276,28 @@ pisan_missions_2 = {
 			add_navy_tradition = 15
 			change_price = {
 				trade_goods = wine
+				key = tuscan_chianti
 				value = 0.5
 				duration = 3650
 			}
 			# Trigger event "Le catene del porto pisano"
+			hidden_effect = {
+				if = {
+					limit = {
+						101 = {
+							NOT = {
+								owned_by = PIS								# TODO add tributaries
+							}
+						}
+					}
+					country_event = {
+						id = pisan_events.7
+						days = 30
+						random = 30
+						tooltip = CATENE_PORTO_PISANO_TT
+					}
+				}
+			}
 		}
 	}
 	amalfi_all_over = {

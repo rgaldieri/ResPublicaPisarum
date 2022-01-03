@@ -1,14 +1,31 @@
 convert_tuscan_faction = {
-    type = take_capital
-    badboy_factor = 1.5
-    prestige_factor = 1.5
+	type = take_capital
+	badboy_factor = 1.5
+	prestige_factor = 1.5
 	peace_cost_factor = 1.25
-
-    # TODO is there any way to have a force faction?
+	# TODO is there any way to have a force faction?
 	allowed_provinces = {
 		always = yes
 	}
+	war_name = CHANGE_TUSCAN_FACTION_NAME
+}
 
-    war_name = CHANGE_TUSCAN_FACTION_NAME	
-
+war_goal_stolen_property = {
+	type = take_capital
+	badboy_factor = 0.5
+	prestige_factor = 1
+	peace_cost_factor = 1
+	allowed_provinces = {
+		NOT = {
+			is_capital = yes
+		}
+	}
+	peace_options = {
+		po_demand_provinces
+		po_revoke_cores
+		po_gold
+		po_concede_defeat
+		po_annul_treaties
+	}
+	war_name = STOLEN_PROPERTY_NAME
 }

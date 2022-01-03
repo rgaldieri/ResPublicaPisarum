@@ -52,3 +52,10 @@ cb_convert_to_ghibellines = {
 	}
 	war_goal = convert_tuscan_faction
 }
+
+cb_stolen_properties = {
+	valid_for_subject = no
+	is_triggered_only = yes
+	months = 120
+	war_goal = war_goal_stolen_property
+}
