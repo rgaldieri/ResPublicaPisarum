@@ -50,15 +50,18 @@ country_decisions = {
 		}
 	}
 	reverse_congresso_di_empoli = {
-		major = no
 		potential = {
 			tag = PIS
 			is_subject = no
+			mission_completed = wipe_the_signoria_out
 			116 = {
 				owned_by = PIS
 			}
 			NOT = {
 				has_country_flag = congresso_di_empoli
+			}
+			NOT = {
+				is_year = 1500
 			}
 		}
 		allow = {

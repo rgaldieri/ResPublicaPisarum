@@ -161,6 +161,7 @@ country_event = {
 	trigger = {
 		tag = PIS
 		religion = catholic
+		mission_completed = revenging_kinzica
 		baleares_area = {
 			type = all
 			country_or_non_sovereign_subject_holds = ROOT

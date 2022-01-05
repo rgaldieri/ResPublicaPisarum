@@ -80,15 +80,19 @@ pisan_missions_1 = {
 		}
 		effect = {
 			# Claim sull'occitania
-			OR = {
-				province_id = 196
-				province_id = 200
-				province_id = 2753
-				province_id = 4391
-				province_id = 4695
-				province_id = 198
+			if = {
+				limit = {
+					OR = {
+						province_id = 196
+						province_id = 200
+						province_id = 2753
+						province_id = 4391
+						province_id = 4695
+						province_id = 198
+					}
+				}
+				add_permanent_claim = ROOT
 			}
-			add_permanent_claim = ROOT
 		}
 	}
 	the_only_true_cross = {
@@ -165,7 +169,6 @@ pisan_missions_2 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	# TODO
 	wipe_the_signoria_out = {
 		icon = wipe_the_signoria_out
 		position = 2
@@ -195,6 +198,7 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
+			# ALSO SHOWS THE CONGRESS OF EMPOLI DECISION
 			add_splendor = 25
 			corsica_sardinia_area = {
 				limit = {
@@ -220,7 +224,6 @@ pisan_missions_2 = {
 			}
 		}
 	}
-	# TODO
 	a_different_granducato = {
 		icon = a_different_granducato
 		position = 3
@@ -237,7 +240,6 @@ pisan_missions_2 = {
 			}
 		}
 		trigger = {
-			# TRIGGER EMPOLI COUNCIL EVENT
 			has_institution = renaissance
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 4
@@ -533,7 +535,6 @@ pisan_missions_3 = {
 			}
 		}
 	}
-	# TODO
 	islas_baleares = {
 		position = 4
 		icon = islas_baleares
@@ -556,6 +557,62 @@ pisan_missions_3 = {
 		}
 		effect = {
 			# Give holy wars to all those provinces that have a border with the baleares and are muslim
+			# TODO REFACTOR
+			if = {
+				limit = {
+					339 = {
+						religion_group = muslim
+						has_owner_religion = yes
+					}
+				}
+				339 = {
+					add_claim = PIS
+				}
+			}
+			if = {
+				limit = {
+					2461 = {
+						religion_group = muslim
+						has_owner_religion = yes
+					}
+				}
+				2461 = {
+					add_claim = PIS
+				}
+			}
+			if = {
+				limit = {
+					337 = {
+						religion_group = muslim
+						has_owner_religion = yes
+					}
+				}
+				337 = {
+					add_claim = PIS
+				}
+			}
+			if = {
+				limit = {
+					338 = {
+						religion_group = muslim
+						has_owner_religion = yes
+					}
+				}
+				338 = {
+					add_claim = PIS
+				}
+			}
+			if = {
+				limit = {
+					1882 = {
+						religion_group = muslim
+						has_owner_religion = yes
+					}
+				}
+				1882 = {
+					add_claim = PIS
+				}
+			}
 		}
 	}
 	# TODO
@@ -676,8 +733,8 @@ pisan_missions_4 = {
 			}
 		}
 	}
-	# TODO
 	revenging_kinzica = {
+		# This triggers the event as well
 		position = 4
 		icon = revenging_kinzica
 		required_missions = {
@@ -685,19 +742,38 @@ pisan_missions_4 = {
 			ties_with_the_church
 		}
 		provinces_to_highlight = {
+			area = tunisia_area
 		}
 		trigger = {
 			tunisia_area = {
+				type = all
 				owned_by = ROOT
+				religion_group = christian
 			}
-			# TODO make that every province must have the same religion that Pisa has
 		}
 		effect = {
-			# Avanza in terra santa
-			# Evento che vuole far costruire una statua in memoria di Kinzica?
+			# TODO Should we add more claims?
+			if = {
+				limit = {
+					379 = {
+						NOT = {
+							religion_group = christian
+						}
+						has_owner_religion = yes
+					}
+				}
+				379 = {
+					OWNER = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_crusade
+							months = 240
+						}
+					}
+				}
+			}
 		}
 	}
-	# TODO
 	back_to_first_crusade = {
 		position = 5
 		icon = back_to_first_crusade
@@ -724,10 +800,21 @@ pisan_missions_4 = {
 			}
 		}
 		effect = {
-			# TODO
+			every_neighbor_country = {
+				limit = {
+					capital = {
+						continent = africa
+					}
+					religion_group = muslim
+				}
+			}
+			add_casus_belli = {
+				type = cb_crusade
+				target = THIS
+				months = 120
+			}
 		}
 	}
-	# TODO
 	expand_to_the_mediterranean = {
 		position = 7
 		icon = expand_to_the_mediterranean
@@ -747,6 +834,10 @@ pisan_missions_4 = {
 		}
 		effect = {
 			# light ships efficiency +5% ?
+			add_country_modifier = {
+				name = owner_of_the_old_sea
+				duration = 7200
+			}
 		}
 	}
 	# TODO
@@ -774,9 +865,29 @@ pisan_missions_4 = {
 			# Something about reports being stolen from venetian merchants
 		}
 		effect = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = VEN
+						alliance_with = VEN
+					}
+				}
+				every_province = {
+					limit = {
+						owned_by = VEN
+						NOT = {
+							region = italy_region
+						}
+					}
+					add_claim = PIS
+				}
+			}
+			add_country_modifier = {
+				name = stolen_embassies
+				duration = -1
+			}
 		}
 	}
-	# TODO
 	brave_new_world = {
 		position = 10
 		icon = brave_new_world
@@ -784,11 +895,46 @@ pisan_missions_4 = {
 			stolen_embassies
 			on_the_silk_road
 		}
+		provinces_to_highlight = {
+			colonial_region = colonial_eastern_america
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
 		trigger = {
-			# 
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 8
+				colonial_region = colonial_eastern_america
+				is_city = yes
+			}
 		}
 		effect = {
-			#
+			add_country_modifier = {
+				name = new_lands_to_explore
+				duration = 7200
+			}
+		}
+	}
+	the_other_side_of_the_globe = {
+		position = 11
+		icon = brave_new_world
+		required_missions = {
+			brave_new_world
+		}
+		trigger = {
+			any_country = {
+				has_colonial_parent = PIS
+				capital_scope = {
+					colonial_region = colonial_australia
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = late_to_the_party
+				duration = -1
+			}
 		}
 	}
 }
@@ -861,7 +1007,6 @@ pisan_missions_5 = {
 			}
 		}
 	}
-	# TODO
 	egyptian_goods = {
 		position = 5
 		icon = egyptian_goods
@@ -893,7 +1038,13 @@ pisan_missions_5 = {
 			}
 		}
 		effect = {
-			# Here the player gets a claim on Syria
+			# Here the player gets a claim on Syria and Aleppo
+			syria_area = {
+				add_claim = ROOT
+			}
+			aleppo_area = {
+				add_claim = ROOT
+			}
 		}
 	}
 	# TODO
@@ -954,7 +1105,6 @@ pisan_missions_5 = {
 			}
 		}
 	}
-	# TODO
 	on_the_silk_road = {
 		position = 9
 		icon = on_the_silk_road
@@ -964,6 +1114,7 @@ pisan_missions_5 = {
 		provinces_to_highlight = {
 			OR = {
 				province_id = 286
+				area = azov_area
 			}
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
@@ -975,11 +1126,14 @@ pisan_missions_5 = {
 				has_building = shipyard
 				has_building = marketplace
 			}
+			azov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
-			# INCREASE TRADE POWER IN THE AREA FOR 10 YEARS?
-			# MORE CORES?
-			# LOCAL DEVELOPMENT IN THE AREA?
+			add_adm_power = 100
+			add_mercantilism = 5
 		}
 	}
 }

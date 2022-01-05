@@ -12,6 +12,7 @@ country_event = {
 		ai_chance = {
 			factor = 80
 		}
+		# TODO
 	}
 	# Pisa refuses the event
 	option = {
