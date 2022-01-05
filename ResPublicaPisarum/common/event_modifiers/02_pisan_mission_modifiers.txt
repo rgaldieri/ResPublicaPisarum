@@ -11,7 +11,7 @@ porto_pisano = {
 	province_trade_power_modifier = 0.2
 }
 
-leave_no_thrace_modifier = {
+leave_no_thrace = {
 	global_missionary_strength = 0.03
 	core_creation = -0.1
 }
@@ -68,4 +68,14 @@ new_lands_to_explore = {
 late_to_the_party = {
 	colonists = 1
 	global_colonial_growth = 15
+}
+
+preparing_the_holy_crusade = {
+	missionaries = 1
+	global_missionary_strength = 0.01
+}
+
+door_to_europe = {
+	global_ship_trade_power = 0.1
+	trade_steering = 0.2
 }
