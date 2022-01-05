@@ -1,0 +1,64 @@
+overthrowing_tuscia = {
+	potential = {
+		has_country_flag = the_marca_della_tuscia
+		government = republic
+		NOT = {
+			republican_tradition = 90
+		}
+	}
+	can_start = {
+		has_any_disaster = no
+		NOT = {
+			republican_tradition = 50
+		}
+	}
+	can_stop = {
+		has_any_disaster = yes
+		republican_tradition = 80
+		stability = 2
+	}
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = {
+				republican_tradition = 80
+			}
+		}
+		modifier = {
+			factor = 1
+			NOT = {
+				republican_tradition = 65
+			}
+		}
+		modifier = {
+			factor = 1
+			NOT = {
+				republican_tradition = 50
+			}
+		}
+	}
+	can_end = {
+		OR = {
+			has_country_flag = tuscia_becomes_monarchy
+			had_country_flag = {
+				flag = tuscia_disaster
+				days = 1825
+			}
+		}
+	}
+	modifier = {
+		global_unrest = 3
+		republican_tradition = 1
+	}
+	# TICK
+	on_monthly = {
+		events = {
+		}
+		random_events = {
+			#TODO
+		}
+	}
+	# TODO
+	on_start = ev.1
+	on_end = ev.2	# add event THAT ALSO HAS 		every_owned_province = {clr_province_flag = recent_monarchist_won_flag}
+}
