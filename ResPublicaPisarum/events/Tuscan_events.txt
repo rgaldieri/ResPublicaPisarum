@@ -1,9 +1,9 @@
-namespace = tuscan_events
+namespace = tuscian_events
 # End Marca della tuscia in 1525
 country_event = {
-	id = tuscan_events.1
-	title = tuscan_events.1.t
-	desc = tuscan_events.1.d
+	id = tuscian_events.1
+	title = tuscian_events.1.t
+	desc = tuscian_events.1.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = no
 	fire_only_once = yes
@@ -18,7 +18,273 @@ country_event = {
 		}
 	}
 	option = {
+		name = "tuscian_events.1.a"
 		remove_country_modifier = the_marca_della_tuscia
-		# TODO
+		# TODO add permanent modifier
+	}
+}
+
+# 
+# Province events
+#
+# Ravenna, Ferrara, Parma
+country_event = {
+	id = tuscian_events.2
+	title = tuscian_events.2.t
+	desc = tuscian_events.2.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.75
+			government = monarchy
+		}
+	}
+	trigger = {
+		has_country_flag = marca_della_tuscia
+		NOT = {
+			has_country_flag = end_marca_della_tuscia
+		}
+	}
+	# Gain claim
+	option = {
+		name = "tuscian_events.2.a"
+		emilia_romagna_area = {
+			limit = {
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			add_permanent_claim = ROOT
+		}
+		add_republican_tradition = -15
+	}
+	# Refuse claim
+	option = {
+		# Ravenna, Ferrara, Parma
+		name = "tuscian_events.2.b"
+		add_prestige = -10
+		add_republican_tradition = 15
+	}
+}
+
+# Padova, Verona
+country_event = {
+	id = tuscian_events.3
+	title = tuscian_events.3.t
+	desc = tuscian_events.3.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 90
+		modifier = {
+			factor = 0.75
+			government = monarchy
+		}
+	}
+	trigger = {
+		has_country_flag = marca_della_tuscia
+		NOT = {
+			has_country_flag = end_marca_della_tuscia
+		}
+	}
+	# Gain claim
+	option = {
+		name = "tuscian_events.3.a"
+		if = {
+			limit = {
+				NOT = {
+					owns = 4729
+				}
+				NOT = {
+					is_core = 4729
+				}
+				NOT = {
+					is_permanent_claim = 4729
+				}
+			}
+			add_permanent_claim = 4729
+			add_republican_tradition = -5
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns = 108
+				}
+				NOT = {
+					is_core = 108
+				}
+				NOT = {
+					is_permanent_claim = 108
+				}
+			}
+			add_permanent_claim = 108
+			add_republican_tradition = -5
+		}
+	}
+	# Refuse claim
+	option = {
+		name = "tuscian_events.3.b"
+		add_prestige = -10
+		add_republican_tradition = 10
+	}
+}
+
+# Brescia, Mantova, Cremona
+country_event = {
+	id = tuscian_events.4
+	title = tuscian_events.4.t
+	desc = tuscian_events.4.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.75
+			government = monarchy
+		}
+	}
+	trigger = {
+		has_country_flag = marca_della_tuscia
+		NOT = {
+			has_country_flag = end_marca_della_tuscia
+		}
+	}
+	# Gain claim
+	option = {
+		name = "tuscian_events.4.a"
+		if = {
+			limit = {
+				NOT = {
+					owns = 107
+				}
+				NOT = {
+					is_core = 107
+				}
+				NOT = {
+					is_permanent_claim = 107
+				}
+			}
+			add_permanent_claim = 107
+			add_republican_tradition = -5
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns = 109
+				}
+				NOT = {
+					is_core = 109
+				}
+				NOT = {
+					is_permanent_claim = 109
+				}
+			}
+			add_permanent_claim = 109
+			add_republican_tradition = -5
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns = 1862
+				}
+				NOT = {
+					is_core = 1862
+				}
+				NOT = {
+					is_permanent_claim = 1862
+				}
+			}
+			add_permanent_claim = 1862
+			add_republican_tradition = -5
+		}
+	}
+	# Refuse claim
+	option = {
+		name = "tuscian_events.4.b"
+		add_prestige = -10
+		add_republican_tradition = 15
+	}
+}
+
+# Tolone, Aix, Forqualier
+country_event = {
+	id = tuscian_events.5
+	title = tuscian_events.5.t
+	desc = tuscian_events.5.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.75
+			government = monarchy
+		}
+	}
+	trigger = {
+		has_country_flag = marca_della_tuscia
+		NOT = {
+			has_country_flag = end_marca_della_tuscia
+		}
+	}
+	# Gain claim
+	option = {
+		name = "tuscian_events.5.a"
+		if = {
+			limit = {
+				NOT = {
+					owns = 201
+				}
+				NOT = {
+					is_core = 201
+				}
+				NOT = {
+					is_permanent_claim = 201
+				}
+			}
+			add_permanent_claim = 201
+			add_republican_tradition = -5
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns = 4696
+				}
+				NOT = {
+					is_core = 4696
+				}
+				NOT = {
+					is_permanent_claim = 4696
+				}
+			}
+			add_permanent_claim = 4696
+			add_republican_tradition = -5
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns = 2991
+				}
+				NOT = {
+					is_core = 2991
+				}
+				NOT = {
+					is_permanent_claim = 2991
+				}
+			}
+			add_permanent_claim = 2991
+			add_republican_tradition = -5
+		}
+	}
+	# Refuse claim
+	option = {
+		name = "tuscian_events.5.b"
+		add_prestige = -10
+		add_republican_tradition = 15
 	}
 }
