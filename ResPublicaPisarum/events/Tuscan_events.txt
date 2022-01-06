@@ -17,6 +17,24 @@ country_event = {
 			has_country_flag = end_marca_della_tuscia
 		}
 	}
+	immediate = {
+		every_province = {
+			limit = {
+				OR = {
+					province_id = 4729
+					province_id = 108
+					province_id = 107
+					province_id = 109
+					province_id = 1862
+					province_id = 201
+					province_id = 4696
+					province_id = 2991
+				}
+				is_claim = ROOT
+			}
+			remove_claim = ROOT
+		}
+	}
 	option = {
 		name = "tuscian_events.1.a"
 		remove_country_modifier = the_marca_della_tuscia
