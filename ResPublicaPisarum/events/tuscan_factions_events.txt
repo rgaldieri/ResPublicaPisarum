@@ -1,5 +1,4 @@
 namespace = tuscan_factions_events
-
 # Ghibellines disaster starts
 country_event = {
 	id = tuscan_factions.1
@@ -7,14 +6,13 @@ country_event = {
 	desc = tuscan_factions.1.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-    
-    mean_time_to_happen = {
+	mean_time_to_happen = {
 		days = 1
 	}
-    immediate = {
-        set_country_flag = ghibellines_in_power_flag
-    }
-    #TODO add options
+	immediate = {
+		set_country_flag = ghibellines_in_power_flag
+	}
+	#TODO add options
 	option = {
 		name = "tuscan_factions.1.a"
 	}
@@ -27,22 +25,19 @@ country_event = {
 	desc = tuscan_factions.2.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-    
 	immediate = {
 		clr_country_flag = bishops_predicating_against_ghibellines
 	}
-
-    mean_time_to_happen = {
+	mean_time_to_happen = {
 		days = 1
 	}
-    #TODO add options
+	#TODO add options
 	option = {
 		name = "tuscan_factions.2.a"
 	}
 }
 
 namespace = tuscan_factions_events
-
 # guelphs disaster starts
 country_event = {
 	id = tuscan_factions.3
@@ -50,14 +45,13 @@ country_event = {
 	desc = tuscan_factions.3.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-    
-    mean_time_to_happen = {
+	mean_time_to_happen = {
 		days = 1
 	}
-    immediate = {
-        set_country_flag = guelphs_in_power_flag
-    }
-    #TODO add options
+	immediate = {
+		set_country_flag = guelphs_in_power_flag
+	}
+	#TODO add options
 	option = {
 		name = "tuscan_factions.3.a"
 	}
@@ -70,18 +64,15 @@ country_event = {
 	desc = tuscan_factions.4.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-    
-    mean_time_to_happen = {
+	mean_time_to_happen = {
 		days = 1
 	}
-
 	immediate = {
 		clr_country_flag = bishops_predicating_against_ghibellines
 	}
-	
-    # What if we make a country a theocracy if the disaster ends in 10 years?
-    # How can we tie this to the pope?
-    #TODO add options
+	# What if we make a country a theocracy if the disaster ends in 10 years?
+	# How can we tie this to the pope?
+	#TODO add options
 	option = {
 		name = "tuscan_factions.4.a"
 	}
@@ -94,16 +85,14 @@ country_event = {
 	desc = tuscan_factions.5.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = no
-
-    mean_time_to_happen = {
+	mean_time_to_happen = {
 		months = 12
 	}
-
 	trigger = {
 		# TODO could spice this up a bit
 		is_year = 1600
 	}
-    immediate = {
+	immediate = {
 		every_country = {
 			limit = {
 				has_factions = yes
@@ -129,21 +118,18 @@ country_event = {
 	desc = tuscan_factions.6.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-
-    mean_time_to_happen = {
+	mean_time_to_happen = {
 		days = 1
 	}
 	immediate = {
 		remove_faction = guelphs
 		remove_faction = ghibellines
 	}
-
 	# Banish the guelphs
 	option = {
 		name = "tuscan_factions.6.a"
 		add_yearly_manpower = -0.5
 	}
-
 	# offer them to stay
 	option = {
 		name = "tuscan_factions.6.a"
@@ -160,7 +146,6 @@ country_event = {
 # Random events if in disaster
 #
 #
-
 # Ghibellines have too much power 1
 # Not answering the pope
 country_event = {
@@ -169,11 +154,10 @@ country_event = {
 	desc = tuscan_factions.7.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-
 	# Banish the guelphs
 	option = {
 		name = "tuscan_factions.7.a"
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = not_answering_rome
 			duration = 1850
 			desc = NOT_ANSWERING_ROME_TOOLTIP
@@ -190,11 +174,10 @@ country_event = {
 	desc = tuscan_factions.8.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-
 	# Shut the bishops up
 	option = {
 		name = "tuscan_factions.8.a"
-		stability = -1
+		add_stability = -1
 	}
 	# Let them talk
 	option = {
@@ -222,13 +205,11 @@ country_event = {
 	desc = tuscan_factions.9.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-
 	# refusing to serve side by side
 	option = {
 		name = "tuscan_factions.9.a"
-		add_army_professionalism = -3
+		add_army_professionalism = -0.3
 	}
-
 	# Kill the bishop
 	option = {
 		name = "tuscan_factions.9.b"
@@ -255,7 +236,6 @@ country_event = {
 	desc = tuscan_factions.10.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-
 	# accept the papal legate
 	option = {
 		name = "tuscan_factions.10.a"
@@ -264,13 +244,11 @@ country_event = {
 			duration = 365
 		}
 	}
-
 	# refuse to meet the delegate
 	option = {
 		name = "tuscan_factions.10.b"
 		add_papal_influence = -15
 	}
-
 	# Kick the cardinal out of town
 	option = {
 		name = "tuscan_factions.10.c"
@@ -294,22 +272,20 @@ country_event = {
 	desc = tuscan_factions.11.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-
 	# accept the papal legate
 	option = {
 		name = "tuscan_factions.11.a"
 		add_country_modifier = {
 			name = the_only_way
-			duration 1850
+			duration = 1850
 		}
 	}
-
 	# refuse to meet the delegate
 	option = {
 		name = "tuscan_factions.11.b"
 		add_country_modifier = {
 			name = faction_dissidents
-			duration 1850
+			duration = 1850
 		}
 	}
 }
@@ -322,14 +298,13 @@ country_event = {
 	desc = tuscan_factions.12.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-
 	# Guelphs keep taking ghibellines stuff
 	option = {
 		name = "tuscan_factions.12.a"
 		emperor = {
 			add_opinion = {
 				who = ROOT
-			    modifier = ghibellines_property
+				modifier = ghibellines_property
 			}
 		}
 	}
@@ -343,7 +318,6 @@ country_event = {
 	desc = tuscan_factions.13.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-
 	# you accept to send the gift
 	option = {
 		name = "tuscan_factions.13.a"
