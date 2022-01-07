@@ -142,9 +142,7 @@ country_event = {
 }
 
 #
-#
 # Random events if in disaster
-#
 #
 # Ghibellines have too much power 1
 # Not answering the pope
@@ -328,4 +326,43 @@ country_event = {
 		name = "tuscan_factions.13.b"
 		add_mercantilism = -5
 	}
+}
+
+
+#
+# factions' flavor
+#
+# A visiting lord
+country_event = {
+	id = tuscan_factions.13
+	title = tuscan_factions.13.t
+	desc = tuscan_factions.13.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+
+	trigger = {
+		is_at_war = no
+		has_factions = yes
+		has_faction = ghibellines
+		stability = -1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					government = monarchy
+					is_at_war = no
+					has_factions = yes
+					has_faction = ghibellines
+					faction_influence = {
+						faction = ghibellines
+						influence = 25
+					}
+				}
+				save_event_target_as = visiting_country_dignitary
+			}
+		}
+	}
+	# Check similar borderFriction events
 }
