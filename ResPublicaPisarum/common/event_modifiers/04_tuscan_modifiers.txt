@@ -32,3 +32,10 @@ wine_is_for_the_mass = {
 wine_is_for_the_rich = {
 	province_trade_power_value = 0.5
 }
+
+regnum_italicorum = {
+}
+
+italicum_emperor = {
+	imperial_authority_value = 0.05
+}

@@ -62,3 +62,30 @@ on_religion_change = {
 		}
 	}
 }
+
+on_emperor_elected = {
+	# IF new emperor, remove bonus
+	if = {
+		limit = {
+			has_country_flag = regnum_italicorum
+			is_emperor = yes
+			NOT = {
+				has_country_flag = has_regnum_italicorum_bonus
+			}
+		}
+	}
+	set_country_flag = has_regnum_italicorum_bonus
+	add_country_modifier = {
+		name = italicum_emperor
+		duration = -1
+	}
+	# if italicorum was emperor but not anymore
+	if = {
+		limit = {
+			has_country_flag = regnum_italicorum
+			has_country_flag = has_regnum_italicorum_bonus
+			is_emperor = no
+		}
+	}
+	remove_country_modifier = italicum_emperor
+}
