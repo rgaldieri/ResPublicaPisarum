@@ -14,21 +14,33 @@ pisan_missions_1 = {
 		}
 		trigger = {
 			is_subject = no
-			stability = 1
-			115 = {
-				owned_by = ROOT
-			}
 		}
 		effect = {
+			add_stability = 2
 			# Add claim on Firenze
 			if = {
 				limit = {
-					exists = LAN
+					115 = {
+						NOT = {
+							owned_by = PIS
+						}
+						owned_by = LAN
+					}
 				}
-				add_casus_belli = {
-					target = LAN
-					type = cb_vassalize_mission
+				115 = {
+					add_core = PIS
 				}
+			}
+			every_province = {
+				limit = {
+					OR = {
+						area = tuscany_area
+						NOT = {
+							province_id = 115
+						}
+					}
+				}
+				add_permanent_claim = PIS
 			}
 		}
 	}
