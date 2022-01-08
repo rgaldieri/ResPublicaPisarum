@@ -338,3 +338,42 @@ country_event = {
 		}
 	}
 }
+
+# Liberazione da firenze
+country_event = {
+	id = pisan_events.10
+	title = pisan_events.10.t
+	desc = pisan_events.10.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+	option = {
+		name = pisan_events.10.a
+		if = {
+			limit = {
+				115 = {
+					NOT = {
+						owned_by = PIS
+					}
+					owned_by = LAN
+				}
+			}
+			115 = {
+				add_core = PIS
+			}
+		}
+		every_province = {
+			limit = {
+				OR = {
+					area = tuscany_area
+					NOT = {
+						province_id = 115
+					}
+					NOT = {
+						owned_by = PIS
+					}
+				}
+			}
+			add_permanent_claim = PIS
+		}
+	}
+}

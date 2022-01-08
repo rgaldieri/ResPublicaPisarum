@@ -17,30 +17,9 @@ pisan_missions_1 = {
 		}
 		effect = {
 			add_stability = 2
-			# Add claim on Firenze
-			if = {
-				limit = {
-					115 = {
-						NOT = {
-							owned_by = PIS
-						}
-						owned_by = LAN
-					}
-				}
-				115 = {
-					add_core = PIS
-				}
-			}
-			every_province = {
-				limit = {
-					OR = {
-						area = tuscany_area
-						NOT = {
-							province_id = 115
-						}
-					}
-				}
-				add_permanent_claim = PIS
+			add_treasury = 50
+			country_event = {
+				id = pisan_events.10
 			}
 		}
 	}
