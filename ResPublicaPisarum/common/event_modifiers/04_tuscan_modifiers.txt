@@ -20,3 +20,15 @@ the_marca_della_tuscia = {
 	province_warscore_cost = -0.1
 	core_creation = -0.1
 }
+
+emperor_guarding_the_fort = {
+	local_defensiveness = 0.2
+}
+
+wine_is_for_the_mass = {
+	trade_goods_size_modifier = -1
+}
+
+wine_is_for_the_rich = {
+	province_trade_power_value = 0.5
+}

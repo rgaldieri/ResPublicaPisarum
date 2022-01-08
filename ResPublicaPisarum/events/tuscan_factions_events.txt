@@ -328,25 +328,27 @@ country_event = {
 	}
 }
 
-
 #
 # factions' flavor
 #
 # A visiting lord
 country_event = {
-	id = tuscan_factions.13
-	title = tuscan_factions.13.t
-	desc = tuscan_factions.13.d
+	id = tuscan_factions.14
+	title = tuscan_factions.14.t
+	desc = tuscan_factions.14.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = no
-
+	mean_time_to_happen = {
+		months = 360
+		# TODO modifiers?
+	}
 	trigger = {
 		is_at_war = no
 		has_factions = yes
 		has_faction = ghibellines
 		stability = -1
+		has_any_disaster = no
 	}
-	
 	immediate = {
 		hidden_effect = {
 			random_country = {
@@ -364,5 +366,216 @@ country_event = {
 			}
 		}
 	}
-	# Check similar borderFriction events
+	# organize an event
+	option = {
+		name = "tuscan_factions.14.a"
+		add_opinion = {
+			who = event_target:visiting_country_dignitary
+			modifier = welcomed_a_faction_member
+		}
+		add_treasury = -30
+		add_faction_influence = {
+			faction = ghibellines
+			influence = 10
+		}
+		add_prestige = 10
+	}
+	# Have a private meeting
+	option = {
+		name = "tuscan_factions.14.b"
+		add_prestige = -15
+	}
+}
+
+# A visiting bishop
+country_event = {
+	id = tuscan_factions.14
+	title = tuscan_factions.14.t
+	desc = tuscan_factions.14.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	trigger = {
+		is_at_war = no
+		has_factions = yes
+		has_any_disaster = no
+		has_faction = guelphs
+		stability = -1
+	}
+	mean_time_to_happen = {
+		months = 360
+		# TODO modifiers?
+	}
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					religion = catholic
+					has_factions = yes
+					has_faction = guelphs
+					has_cardinal = yes
+					faction_influence = {
+						faction = ghibellines
+						influence = 40
+					}
+				}
+				save_event_target_as = visiting_country_cardinal
+			}
+		}
+	}
+	# Let him celebrate mass
+	option = {
+		name = "tuscan_factions.14.a"
+		add_opinion = {
+			who = event_target:visiting_country_cardinal
+			modifier = welcomed_a_faction_member
+		}
+		add_faction_influence = {
+			faction = guelphs
+			influence = 15
+		}
+	}
+	# Have a private meeting
+	option = {
+		name = "tuscan_factions.14.b"
+		add_prestige = -15
+		add_opinion = {
+			who = event_target:visiting_country_cardinal
+			modifier = refused_shared_mass
+		}
+	}
+}
+
+# Emperor army passing by
+country_event = {
+	id = tuscan_factions.15
+	title = tuscan_factions.15.t
+	desc = tuscan_factions.15.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	mean_time_to_happen = {
+		months = 400
+		# TODO modifiers?
+	}
+	trigger = {
+		is_at_war = no
+		has_factions = yes
+		has_faction = ghibellines
+		stability = -1
+		has_any_disaster = no
+		emperor = {
+			has_opinion = {
+				who = ROOT
+				value = 50
+			}
+		}
+	}
+	# Emperor passes by and leaves some troops
+	option = {
+		name = "tuscan_factions.15.a"
+		random_owned_province = {
+			limit = {
+				fort_level = 1
+			}
+			add_province_modifier = {
+				name = emperor_guarding_the_fort
+				duration = 3650
+			}
+		}
+		add_faction_influence = {
+			faction = ghibellines
+			influence = 5
+		}
+	}
+}
+
+# Discussions in the town council
+country_event = {
+	id = tuscan_factions.16
+	title = tuscan_factions.16.t
+	desc = tuscan_factions.16.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	mean_time_to_happen = {
+		months = 240
+		# TODO modifiers?
+	}
+	trigger = {
+		is_at_war = no
+		has_factions = yes
+		has_faction = ghibellines
+		has_faction = guelphs
+		stability = 0
+		government = republic
+	}
+	# Favor the guelph counselor
+	option = {
+		name = "tuscan_factions.16.a"
+		add_faction_influence = {
+			faction = guelphs
+			influence = 10
+		}
+	}
+	# Favor the ghibelline counselor
+	option = {
+		name = "tuscan_factions.16.b"
+		add_faction_influence = {
+			faction = ghibellines
+			influence = 10
+		}
+	}
+	# Stay neutral
+	option = {
+		name = "tuscan_factions.16.c"
+		add_republican_tradition = -5
+	}
+}
+
+# Dispute between the bishop and a merchant
+province_event = {
+	id = tuscan_factions.17
+	title = tuscan_factions.17.t
+	desc = tuscan_factions.17.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = no
+	mean_time_to_happen = {
+		months = 360
+	}
+	trigger = {
+		OWNER = {
+			is_at_war = no
+			has_factions = yes
+			has_faction = ghibellines
+			has_faction = guelphs
+			stability = 0
+		}
+		trade_goods = wine
+	}
+	# Wine is for the church
+	option = {
+		name = "tuscan_factions.17.a"
+		OWNER = {
+			add_faction_influence = {
+				faction = guelphs
+				influence = 5
+			}
+		}
+		add_province_modifier = {
+			name = wine_is_for_the_mass
+			duration = 3650
+		}
+	}
+	# Wine is to be sold!
+	option = {
+		name = "tuscan_factions.17.b"
+		OWNER = {
+			add_faction_influence = {
+				faction = ghibellines
+				influence = 5
+			}
+		}
+		add_province_modifier = {
+			name = wine_is_for_the_rich
+			duration = 3650
+		}
+	}
 }

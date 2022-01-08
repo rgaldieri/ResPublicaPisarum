@@ -4,7 +4,7 @@ congress_of_empoli = {
 	min = -50
 }
 
-curia_not_compensated  = {
+curia_not_compensated = {
 	opinion = -50
 	yearly_decay = 3
 	min = -50
@@ -14,4 +14,16 @@ ghibellines_property = {
 	opinion = -25
 	yearly_decay = 5
 	min = -100
+}
+
+welcomed_a_faction_member = {
+	opinion = 30
+	yearly_decay = 3
+	max = 75
+}
+
+refused_shared_mass = {
+	opinion = -20
+	yearly_decay = 3
+	min = -50
 }
