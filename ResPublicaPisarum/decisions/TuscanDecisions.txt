@@ -59,6 +59,7 @@ country_decisions = {
 		potential = {
 			primary_culture = tuscan
 			is_subject = no
+			government = monarchy
 			has_country_flag = marca_della_tuscia
 			is_part_of_hre = yes
 			NOT = {
@@ -86,21 +87,75 @@ country_decisions = {
 			owns_core_province = 2991			# Forqualier
 		}
 		effect = {
-			# TO FINISH
-			add_country_modifier = {
-				name = regnum_italicorum
-				duration = -1
+			# Effects if monarchy
+			if = {
+				limit = {
+					government = monarchy
+				}
+				set_country_flag = regnum_italicorum
+				add_country_modifier = {
+					name = regnum_italicorum
+					duration = -1
+				}
 			}
+			# Effect if emperor as well
 			if = {
 				limit = {
 					ROOT = {
 						is_emperor = yes
 					}
 				}
-				set_country_flag = regnum_italicorum
 				set_country_flag = has_regnum_italicorum_bonus
 				add_country_modifier = {
 					name = italicum_emperor
+					duration = -1
+				}
+			}
+		}
+	}
+	tuscian_republic = {
+		major = yes
+		potential = {
+			primary_culture = tuscan
+			is_subject = no
+			government = republic
+			has_country_flag = marca_della_tuscia
+			is_part_of_hre = yes
+			NOT = {
+				is_year = 1525
+			}
+		}
+		allow = {
+			owns_core_province = 115			# Pisa
+			owns_core_province = 116			# Florence
+			owns_core_province = 1247			# Corsica
+			owns_core_province = 2978			# Arezzo
+			owns_core_province = 106			# Modena
+			owns_core_province = 4730			# Bologna
+			owns_core_province = 117			# Siena
+			owns_core_province = 114			# Ravenna
+			owns_core_province = 113			# Ferrara
+			owns_core_province = 105			# Parma
+			owns_core_province = 4729			# Padova
+			owns_core_province = 108			# Verona
+			owns_core_province = 107			# Brescia
+			owns_core_province = 109			# Mantova
+			owns_core_province = 1862			# Cremona
+			owns_core_province = 201			# Tolone
+			owns_core_province = 4696			# Aix
+			owns_core_province = 2991			# Forqualier
+		}
+		effect = {
+			# Is republic
+			if = {
+				limit = {
+					OR = {
+						government = republic
+						is_part_of_hre = no
+					}
+				}
+				add_country_modifier = {
+					name = tuscian_republic
 					duration = -1
 				}
 			}

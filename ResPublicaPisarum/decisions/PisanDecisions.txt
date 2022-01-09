@@ -1,6 +1,5 @@
 country_decisions = {
 	enable_mazzascudo = {
-		major = no
 		potential = {
 			tag = PIS
 			is_subject = no
@@ -33,7 +32,6 @@ country_decisions = {
 		}
 	}
 	disable_mazzascudo = {
-		major = no
 		potential = {
 			has_country_flag = mazzascudo
 		}

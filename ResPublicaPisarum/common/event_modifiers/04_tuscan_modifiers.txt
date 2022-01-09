@@ -34,8 +34,13 @@ wine_is_for_the_rich = {
 }
 
 regnum_italicorum = {
+	# TODO
 }
 
 italicum_emperor = {
 	imperial_authority_value = 0.05
+}
+
+tuscian_republic = {
+	country_diplomatic_power = 1
 }

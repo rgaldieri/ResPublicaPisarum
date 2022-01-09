@@ -263,12 +263,22 @@ pisan_missions_2 = {
 			}
 		}
 		effect = {
-			add_navy_tradition = 15
+			add_navy_tradition = 10
 			change_price = {
 				trade_goods = wine
 				key = tuscan_chianti
 				value = 0.5
 				duration = 3650
+			}
+			if = {
+				limit = {
+					115 = {
+						province_has_center_of_trade_of_level = 1
+					}
+				}
+				115 = {
+					add_center_of_trade_level = 1
+				}
 			}
 			# Trigger event "Le catene del porto pisano"
 			hidden_effect = {
