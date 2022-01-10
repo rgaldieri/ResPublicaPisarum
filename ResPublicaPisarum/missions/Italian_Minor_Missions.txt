@@ -1,3 +1,4 @@
+#TODO can I delete this?
 italian_minor_group_1 = {
 	slot = 1
 	generic = no

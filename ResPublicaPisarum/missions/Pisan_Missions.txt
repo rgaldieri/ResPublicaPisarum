@@ -777,7 +777,6 @@ pisan_missions_4 = {
 			}
 		}
 	}
-	# TODO Does not work
 	back_to_first_crusade = {
 		position = 5
 		icon = back_to_first_crusade
@@ -804,21 +803,20 @@ pisan_missions_4 = {
 			}
 		}
 		effect = {
-			#PIS = {
-			#	every_neighbor_country = {
-			#		limit = {
-			#			capital = {
-			#				continent = africa
-			#			}
-			#			religion_group = muslim
-			#		}
-			#		reverse_add_casus_belli = {
-			#			type = cb_crusade
-			#			target = PIS
-			#			months = 120
-			#		}
-			#	}
-			#}
+			if = {
+				limit = {
+					exists = TUR
+				}
+				add_casus_belli = {
+					type = cb_crusade
+					target = TUR
+					months = 180
+				}
+			}
+			else = {
+				add_treasury = 200
+				add_prestige = 25
+			}
 		}
 	}
 	expand_to_the_mediterranean = {
@@ -886,7 +884,6 @@ pisan_missions_4 = {
 			# You can even reduce Venice trading efficiency!
 		}
 	}
-	# TODO
 	stolen_embassies = {
 		position = 9
 		icon = stolen_embassies
@@ -894,6 +891,15 @@ pisan_missions_4 = {
 			unum_mare
 		}
 		trigger = {
+			OR = {
+				NOT = {
+					exists = VEN
+				}
+				has_spy_network_in = {
+					who = VEN
+					value = 80
+				}
+			}
 			# Something about reports being stolen from venetian merchants
 		}
 		effect = {
