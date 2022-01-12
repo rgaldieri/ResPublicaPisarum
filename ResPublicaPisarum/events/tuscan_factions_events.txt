@@ -27,6 +27,7 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		clr_country_flag = bishops_predicating_against_ghibellines
+		clr_country_flag = ghibellines_in_power_flag
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -69,6 +70,7 @@ country_event = {
 	}
 	immediate = {
 		clr_country_flag = bishops_predicating_against_ghibellines
+		clr_country_flag = guelphs_in_power_flag
 	}
 	# What if we make a country a theocracy if the disaster ends in 10 years?
 	# How can we tie this to the pope?
@@ -103,6 +105,8 @@ country_event = {
 			}
 			remove_faction = guelphs
 			remove_faction = ghibellines
+			# Remove faction flags
+			clr_country_flag = bishops_predicating_against_ghibellines
 		}
 	}
 	#TODO add options

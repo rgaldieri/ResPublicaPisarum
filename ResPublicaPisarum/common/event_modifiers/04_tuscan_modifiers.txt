@@ -15,7 +15,7 @@ the_only_way = {
 	tolerance_heretic = -5
 }
 
-the_marca_della_tuscia = {
+marca_della_tuscia_modifier = {
 	republican_tradition = -1
 	province_warscore_cost = -0.1
 	core_creation = -0.1

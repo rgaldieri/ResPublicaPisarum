@@ -1,6 +1,6 @@
 overthrowing_tuscia = {
 	potential = {
-		has_country_flag = the_marca_della_tuscia
+		has_country_flag = marca_della_tuscia
 		government = republic
 		NOT = {
 			republican_tradition = 90
@@ -41,7 +41,7 @@ overthrowing_tuscia = {
 		OR = {
 			has_country_flag = tuscia_becomes_monarchy
 			had_country_flag = {
-				flag = tuscia_disaster
+				flag = overthrowing_tuscia_disaster
 				days = 1825
 			}
 		}
@@ -59,6 +59,6 @@ overthrowing_tuscia = {
 		}
 	}
 	# TODO
-	on_start = ev.1
-	on_end = ev.2	# add event THAT ALSO HAS 		every_owned_province = {clr_province_flag = recent_monarchist_won_flag}
+	on_start = tuscian_events.14
+	on_end = tuscian_events.15
 }

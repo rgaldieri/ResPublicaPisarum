@@ -18,6 +18,8 @@ country_event = {
 		}
 	}
 	immediate = {
+		set_country_flag = end_marca_della_tuscia
+		clr_country_flag = marca_della_tuscia
 		every_province = {
 			limit = {
 				OR = {
@@ -37,7 +39,7 @@ country_event = {
 	}
 	option = {
 		name = "tuscian_events.1.a"
-		remove_country_modifier = the_marca_della_tuscia
+		remove_country_modifier = marca_della_tuscia_modifier
 		# TODO add permanent modifier
 	}
 }
@@ -304,5 +306,39 @@ country_event = {
 		name = "tuscian_events.5.b"
 		add_prestige = -10
 		add_republican_tradition = 15
+	}
+}
+
+# start overthrowing tuscia disaster TODO
+country_event = {
+	id = tuscian_events.14
+	title = tuscian_events.14.t
+	desc = tuscian_events.14.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = overthrowing_tuscia_disaster
+	}
+	option = {
+		name = "tuscian_events.14.a"
+		# TODO
+	}
+}
+
+# Ending overthrowing tuscia disaster TODO
+country_event = {
+	id = tuscian_events.15
+	title = tuscian_events.15.t
+	desc = tuscian_events.15.d
+	picture = ADVISOR_eventPicture	# TODO
+	is_triggered_only = yes
+	immediate = {
+		every_owned_province = {
+			clr_province_flag = recent_monarchist_won_flag
+		}
+	}
+	option = {
+		name = "tuscian_events.15.a"
+		# TODO
 	}
 }

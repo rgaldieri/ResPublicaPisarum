@@ -45,7 +45,7 @@ country_decisions = {
 			set_country_flag = marca_della_tuscia
 			add_republican_tradition = -20
 			add_country_modifier = {
-				name = the_marca_della_tuscia
+				name = marca_della_tuscia_modifier
 				duration = -1
 			}
 		}
