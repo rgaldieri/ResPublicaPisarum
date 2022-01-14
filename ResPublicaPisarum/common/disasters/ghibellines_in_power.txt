@@ -51,22 +51,20 @@ ghibellines_in_power = {
 	}
 	# ACTIVE FOR AS LONG AS THE DISASTER IS
 	modifier = {
-        global_unrest = 2
+		global_unrest = 2
 		papal_influence = -1
 	}
-
 	on_start = tuscan_factions.1
 	on_end = tuscan_factions.2
-
 	on_monthly = {
-        events = {
-        }
-        random_events = { 
-                900 = 0
-                100 = tuscan_factions.7
-                100 = tuscan_factions.8
-                100 = tuscan_factions.9
-                200 = tuscan_factions.10
-        }
+		events = {
+		}
+		random_events = {
+			900 = 0
+			100 = tuscan_factions.7
+			100 = tuscan_factions.8
+			100 = tuscan_factions.9
+			200 = tuscan_factions.10
+		}
 	}
 }

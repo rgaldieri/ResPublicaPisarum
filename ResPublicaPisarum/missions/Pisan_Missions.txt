@@ -1012,24 +1012,10 @@ pisan_missions_5 = {
 		required_missions = {
 		}
 		trigger = {
-			if = {
-				limit = {
-					has_dlc = leviathan #CHECK
-				}
-				115 = {
-					is_capital = yes
-					owned_by = ROOT
-					has_great_project = {
-						type = pisa_tower # STILL MISSING
-						tier = 2
-					}
-				}
-			} else {
-				115 = {
-					is_capital = yes
-					owned_by = ROOT
-					has_building = cathedral
-				}
+			115 = {
+				is_capital = yes
+				owned_by = ROOT
+				has_building = cathedral
 			}
 			# Pisa has cathedral
 			OR = {

@@ -3,6 +3,7 @@
 # on_actions with a lot of script in them are harder to get an overview of.
 # country
 # TODO is this the best way of doing it?
+# Yes, in history/countries/countryName
 on_startup = {
 	# Add factions to whoever needs them
 	if = {
@@ -73,8 +74,8 @@ on_emperor_elected = {
 				has_country_flag = has_regnum_italicorum_bonus
 			}
 		}
+		set_country_flag = has_regnum_italicorum_bonus
 	}
-	set_country_flag = has_regnum_italicorum_bonus
 	add_country_modifier = {
 		name = italicum_emperor
 		duration = -1
@@ -86,6 +87,6 @@ on_emperor_elected = {
 			has_country_flag = has_regnum_italicorum_bonus
 			is_emperor = no
 		}
+		remove_country_modifier = italicum_emperor
 	}
-	remove_country_modifier = italicum_emperor
 }

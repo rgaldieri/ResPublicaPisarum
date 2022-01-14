@@ -7,7 +7,7 @@ convert_tuscan_faction = {
 	allowed_provinces = {
 		always = yes
 	}
-	war_name = CHANGE_TUSCAN_FACTION_NAME
+	war_name = CONVERT_TUSCAN_FACTION_NAME
 }
 
 war_goal_stolen_property = {
@@ -27,5 +27,5 @@ war_goal_stolen_property = {
 		po_concede_defeat
 		po_annul_treaties
 	}
-	war_name = STOLEN_PROPERTY_NAME
+	war_name = STOLEN_PROPERTY_WARGOAL
 }

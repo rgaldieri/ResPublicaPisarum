@@ -1,4 +1,4 @@
-guelphes_in_power = {
+guelphs_in_power = {
 	potential = {
 		has_faction = guelphs
 		faction_influence = {
@@ -51,21 +51,19 @@ guelphes_in_power = {
 	}
 	# ACTIVE FOR AS LONG AS THE DISASTER IS
 	modifier = {
-        global_unrest = 2
-        #TODO Add something else
+		global_unrest = 2
+		#TODO Add something else
 	}
-
 	on_start = tuscan_factions.3
 	on_end = tuscan_factions.4
-
 	on_monthly = {
-        events = {
-        }
-        random_events = { 
-                900 = 0
-                100 = tuscan_factions.11
-                100 = tuscan_factions.12
-                100 = tuscan_factions.13
-        }
+		events = {
+		}
+		random_events = {
+			900 = 0
+			100 = tuscan_factions.11
+			100 = tuscan_factions.12
+			100 = tuscan_factions.13
+		}
 	}
 }
