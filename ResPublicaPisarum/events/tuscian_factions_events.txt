@@ -136,7 +136,7 @@ country_event = {
 	}
 	# offer them to stay
 	option = {
-		name = "tuscan_factions.6.a"
+		name = "tuscan_factions.6.b"
 		add_country_modifier = {
 			name = faction_dissidents
 			duration = 1825
@@ -162,7 +162,7 @@ country_event = {
 		add_country_modifier = {
 			name = not_answering_rome
 			duration = 1850
-			desc = NOT_ANSWERING_ROME_TOOLTIP
+			desc = NOT_ANSWERING_ROME_DESC
 		}
 	}
 }
@@ -337,9 +337,9 @@ country_event = {
 #
 # A visiting lord
 country_event = {
-	id = tuscan_factions.14
-	title = tuscan_factions.14.t
-	desc = tuscan_factions.14.d
+	id = tuscan_factions.18
+	title = tuscan_factions.18.t
+	desc = tuscan_factions.18.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = no
 	mean_time_to_happen = {
@@ -372,7 +372,7 @@ country_event = {
 	}
 	# organize an event
 	option = {
-		name = "tuscan_factions.14.a"
+		name = "tuscan_factions.18.a"
 		add_opinion = {
 			who = event_target:visiting_country_dignitary
 			modifier = welcomed_a_faction_member
@@ -386,7 +386,7 @@ country_event = {
 	}
 	# Have a private meeting
 	option = {
-		name = "tuscan_factions.14.b"
+		name = "tuscan_factions.18.b"
 		add_prestige = -15
 	}
 }

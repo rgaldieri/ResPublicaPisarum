@@ -1,0 +1,175 @@
+﻿l_english:
+  #
+	tuscan_factions.1.t:0 "TODO"
+	tuscan_factions.1.d:0 "TODO"
+	tuscan_factions.1.a:0 "TODO"
+  #
+	tuscan_factions.2.t:0 "TODO"
+	tuscan_factions.2.d:0 "TODO"
+	tuscan_factions.2.a:0 "TODO"
+  #
+	tuscan_factions.3.t:0 "TODO"
+	tuscan_factions.3.d:0 "TODO"
+	tuscan_factions.3.a:0 "TODO"
+  #
+	tuscan_factions.4.t:0 "TODO"
+	tuscan_factions.4.d:0 "TODO"
+	tuscan_factions.4.a:0 "TODO"
+  #
+	tuscan_factions.5.t:0 "TODO"
+	tuscan_factions.5.d:0 "TODO"
+	tuscan_factions.5.a:0 "TODO"
+  #
+	tuscan_factions.6.t:0 "TODO"
+	tuscan_factions.6.d:0 "TODO"
+	tuscan_factions.6.a:0 "TODO"
+	tuscan_factions.6.b:0 "TODO"
+  #
+	tuscan_factions.7.t:0 "TODO"
+	tuscan_factions.7.d:0 "TODO"
+	tuscan_factions.7.a:0 "TODO"
+  #
+	tuscan_factions.8.t:0 "TODO"
+	tuscan_factions.8.d:0 "TODO"
+	tuscan_factions.8.a:0 "TODO"
+	tuscan_factions.8.b:0 "TODO"
+  #
+	tuscan_factions.9.t:0 "TODO"
+	tuscan_factions.9.d:0 "TODO"
+	tuscan_factions.9.a:0 "TODO"
+	tuscan_factions.9.b:0 "TODO"
+	tuscan_factions.9.c:0 "TODO"
+  #
+	tuscan_factions.10.t:0 "TODO"
+	tuscan_factions.10.d:0 "TODO"
+	tuscan_factions.10.a:0 "TODO"
+	tuscan_factions.10.b:0 "TODO"
+	tuscan_factions.10.c:0 "TODO"
+  #
+	tuscan_factions.11.t:0 "TODO"
+	tuscan_factions.11.d:0 "TODO"
+	tuscan_factions.11.a:0 "TODO"
+	tuscan_factions.11.b:0 "TODO"
+  #
+	tuscan_factions.12.t:0 "TODO"
+	tuscan_factions.12.d:0 "TODO"
+	tuscan_factions.12.a:0 "TODO"
+	#
+	tuscan_factions.13.t:0 "TODO"
+	tuscan_factions.13.d:0 "TODO"
+	tuscan_factions.13.a:0 "TODO"
+	tuscan_factions.13.b:0 "TODO"
+	#
+	tuscan_factions.14.t:0 "TODO"
+	tuscan_factions.14.d:0 "TODO"
+	tuscan_factions.14.a:0 "TODO"
+	tuscan_factions.14.b:0 "TODO"
+	#
+	tuscan_factions.15.t:0 "TODO"
+	tuscan_factions.15.d:0 "TODO"
+	tuscan_factions.15.a:0 "TODO"
+	#
+	tuscan_factions.16.t:0 "TODO"
+	tuscan_factions.16.d:0 "TODO"
+	tuscan_factions.16.a:0 "TODO"
+	tuscan_factions.16.b:0 "TODO"
+	tuscan_factions.16.c:0 "TODO"
+	#
+	tuscan_factions.17.t:0 "TODO"
+	tuscan_factions.17.d:0 "TODO"
+	tuscan_factions.17.a:0 "TODO"
+	tuscan_factions.17.b:0 "TODO"
+	#
+	tuscan_factions.18.t:0 "TODO"
+	tuscan_factions.18.d:0 "TODO"
+	tuscan_factions.18.a:0 "TODO"
+	tuscan_factions.18.b:0 "TODO"
+	# Pisan events
+	#
+  pisan_events.1.t:0 "TODO"
+	pisan_events.1.d:0 "TODO"
+	pisan_events.1.a:0 "TODO"
+	#
+  pisan_events.2.t:0 "TODO"
+	pisan_events.2.d:0 "TODO"
+	pisan_events.2.a:0 "TODO"
+	pisan_events.2.b:0 "TODO"
+	#
+  pisan_events.3.t:0 "TODO"
+	pisan_events.3.d:0 "TODO"
+	pisan_events.3.a:0 "TODO"
+	pisan_events.3.b:0 "TODO"
+	#
+  pisan_events.4.t:0 "TODO"
+	pisan_events.4.d:0 "TODO"
+	pisan_events.4.a:0 "TODO"
+	pisan_events.4.b:0 "TODO"
+	#
+  pisan_events.5.t:0 "TODO"
+	pisan_events.5.d:0 "TODO"
+	pisan_events.5.a:0 "TODO"
+	pisan_events.5.b:0 "TODO"
+	#
+  pisan_events.6.t:0 "TODO"
+	pisan_events.6.d:0 "TODO"
+	pisan_events.6.a:0 "TODO"
+	pisan_events.6.b:0 "TODO"
+	#
+  pisan_events.7.t:0 "TODO"
+	pisan_events.7.d:0 "TODO"
+	pisan_events.7.a:0 "TODO"
+	pisan_events.7.b:0 "TODO"
+	#
+  pisan_events.8.t:0 "TODO"
+	pisan_events.8.d:0 "TODO"
+	pisan_events.8.a:0 "TODO"
+	pisan_events.8.b:0 "TODO"
+	#
+  pisan_events.9.t:0 "TODO"
+	pisan_events.9.d:0 "TODO"
+	pisan_events.9.a:0 "TODO"
+	#
+  pisan_events.10.t:0 "TODO"
+	pisan_events.10.d:0 "TODO"
+	pisan_events.10.a:0 "TODO"
+	# 
+	# Mission Tree Events
+	#
+	pisan_mission_events.2.t:0 "TODO"
+	pisan_mission_events.2.d:0 "TODO"
+	pisan_mission_events.2.a:0 "TODO"
+	pisan_mission_events.2.b:0 "TODO"
+	# 
+	# Tuscian Events
+	#
+	tuscian_events.1.t:0 "TODO"
+	tuscian_events.1.d:0 "TODO"
+	tuscian_events.1.a:0 "TODO"
+	#
+	tuscian_events.2.t:0 "TODO"
+	tuscian_events.2.d:0 "TODO"
+	tuscian_events.2.a:0 "TODO"
+	tuscian_events.2.b:0 "TODO"
+	#
+	tuscian_events.3.t:0 "TODO"
+	tuscian_events.3.d:0 "TODO"
+	tuscian_events.3.a:0 "TODO"
+	tuscian_events.3.b:0 "TODO"
+	#
+	tuscian_events.4.t:0 "TODO"
+	tuscian_events.4.d:0 "TODO"
+	tuscian_events.4.a:0 "TODO"
+	tuscian_events.4.b:0 "TODO"
+	#
+	tuscian_events.5.t:0 "TODO"
+	tuscian_events.5.d:0 "TODO"
+	tuscian_events.5.a:0 "TODO"
+	tuscian_events.5.b:0 "TODO"
+	#
+	tuscian_events.14.t:0 "TODO"
+	tuscian_events.14.d:0 "TODO"
+	tuscian_events.14.a:0 "TODO"
+	#
+	tuscian_events.15.t:0 "TODO"
+	tuscian_events.15.d:0 "TODO"
+	tuscian_events.15.a:0 "TODO"

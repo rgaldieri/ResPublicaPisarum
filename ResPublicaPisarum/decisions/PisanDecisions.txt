@@ -91,7 +91,7 @@ country_decisions = {
 					faction_in_power = ghibellines
 				}
 			}
-			# Pisa, Siena, Arezzo (if independent), Terni must be ghibellina
+			# TODO Pisa, Siena, Arezzo (if independent), Terni must be ghibellina
 			# 
 		}
 		effect = {

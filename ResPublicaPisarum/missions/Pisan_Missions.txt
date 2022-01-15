@@ -123,7 +123,7 @@ pisan_missions_1 = {
 			}
 		}
 		effect = {
-			# A BIT MORE?
+			# TODO A BIT MORE?
 			add_country_modifier = {
 				name = "followers_of_the_true_cross"
 				duration = 7300
@@ -341,27 +341,35 @@ pisan_missions_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			200 = {
+			if = {
 				limit = {
-					NOT = {
-						is_core = ROOT
-					}
-					NOT = {
-						is_permanent_claim = ROOT
+					200 = {
+						NOT = {
+							is_core = ROOT
+						}
+						NOT = {
+							is_permanent_claim = ROOT
+						}
 					}
 				}
-				add_permanent_claim = ROOT
+				200 = {
+					add_permanent_claim = ROOT
+				}
 			}
-			201 = {
+			if = {
 				limit = {
-					NOT = {
-						is_core = ROOT
-					}
-					NOT = {
-						is_permanent_claim = ROOT
+					201 = {
+						NOT = {
+							is_core = ROOT
+						}
+						NOT = {
+							is_permanent_claim = ROOT
+						}
 					}
 				}
-				add_permanent_claim = ROOT
+				201 = {
+					add_permanent_claim = ROOT
+				}
 			}
 		}
 	}
@@ -372,12 +380,12 @@ pisan_missions_2 = {
 			amalfi_all_over
 		}
 		# TODO improve and highlight messina and trapani if they do not have the right culture
-		provinces_to_highlight = {
-			area = sicilian_area
-			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
+		#provinces_to_highlight = {
+		#	area = sicilian_area
+		#	NOT = {
+		#		country_or_non_sovereign_subject_holds = ROOT
+		#	}
+		#}
 		trigger = {
 			sicily_area = {
 				type = all
@@ -995,7 +1003,7 @@ pisan_missions_5 = {
 			share_of_starting_income = 1.3
 			treasury = 250
 			115 = {
-				has_building = church
+				has_building = temple
 			}
 			NOT = {
 				num_of_loans = 1

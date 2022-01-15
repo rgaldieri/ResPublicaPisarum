@@ -219,7 +219,7 @@ province_event = {
 				type = natural_scientist
 				name = "Marcello Malpighi"
 				skill = 2
-				culture = romagnol
+				culture = romagnan
 			}
 		}
 		OWNER = {
