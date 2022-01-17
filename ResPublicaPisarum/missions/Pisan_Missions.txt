@@ -908,7 +908,7 @@ pisan_missions_4 = {
 					value = 80
 				}
 			}
-			# Something about reports being stolen from venetian merchants
+			# TODO Something about reports being stolen from venetian merchants
 		}
 		effect = {
 			every_country = {
