@@ -478,7 +478,7 @@ pisan_missions_3 = {
 		effect = {
 			115 = {
 				add_province_modifier = {
-					name = "porto_pisano"
+					name = "city_at_sea"
 					duration = 3650
 				}
 			}
@@ -647,7 +647,7 @@ pisan_missions_3 = {
 		}
 		effect = {
 			add_country_modifier = {
-				name = door_to_europe
+				name = a_stronger_foundation
 				duration = 7200
 			}
 			# Start some sort of crisis with venice that could lead to war
@@ -930,7 +930,7 @@ pisan_missions_4 = {
 			}
 			add_country_modifier = {
 				name = stolen_embassies
-				duration = -1
+				duration = 7200
 			}
 		}
 	}

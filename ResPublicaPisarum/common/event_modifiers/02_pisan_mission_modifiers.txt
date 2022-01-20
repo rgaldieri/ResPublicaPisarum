@@ -6,7 +6,7 @@ followers_of_the_true_cross = {
 	merchants = 1
 }
 
-porto_pisano = {
+city_at_sea = {
 	province_trade_power_value = 10
 	province_trade_power_modifier = 0.2
 }
@@ -69,7 +69,7 @@ preparing_the_holy_crusade = {
 	global_missionary_strength = 0.01
 }
 
-door_to_europe = {
-	global_ship_trade_power = 0.1
+a_stronger_foundation = {
+	global_unrest = -2
 	trade_steering = 0.2
 }
