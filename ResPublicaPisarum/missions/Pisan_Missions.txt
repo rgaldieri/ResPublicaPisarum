@@ -266,7 +266,7 @@ pisan_missions_2 = {
 			add_navy_tradition = 10
 			change_price = {
 				trade_goods = wine
-				key = tuscan_chianti
+				key = tuscan_wine
 				value = 0.5
 				duration = 3650
 			}
