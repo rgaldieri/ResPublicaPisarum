@@ -144,6 +144,8 @@ country_decisions = {
 			owns_core_province = 201			# Tolone
 			owns_core_province = 4696			# Aix
 			owns_core_province = 2991			# Forqualier
+			republican_tradition = 95
+
 		}
 		effect = {
 			# Is republic
@@ -159,6 +161,8 @@ country_decisions = {
 					duration = -1
 				}
 			}
+			clr_country_flag = marca_della_tuscia
+			remove_country_modifier = marca_della_tuscia_modifier
 		}
 	}
 }
