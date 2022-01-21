@@ -1,45 +1,46 @@
 ﻿l_english:
-  #
-	tuscan_factions.1.t:0 "TODO"
+  # Ghibellines disaster starts
+	tuscan_factions.1.t:0 "Ghibellines staging a Coup"
 	tuscan_factions.1.d:0 "TODO"
 	tuscan_factions.1.a:0 "TODO"
-  #
-	tuscan_factions.2.t:0 "TODO"
+  # Ghibellines disaster ends
+	tuscan_factions.2.t:0 "Peace has been re-established"
 	tuscan_factions.2.d:0 "TODO"
 	tuscan_factions.2.a:0 "TODO"
-  #
-	tuscan_factions.3.t:0 "TODO"
+  # Guelphs disaster starts
+	tuscan_factions.3.t:0 "Guelphs staging a coup"
 	tuscan_factions.3.d:0 "TODO"
 	tuscan_factions.3.a:0 "TODO"
-  #
+  # Guelphs disaster ends
 	tuscan_factions.4.t:0 "TODO"
 	tuscan_factions.4.d:0 "TODO"
 	tuscan_factions.4.a:0 "TODO"
-  #
-	tuscan_factions.5.t:0 "TODO"
+  # Disable the factions if conditions are met
+	tuscan_factions.5.t:0 "End of old disagreements"
 	tuscan_factions.5.d:0 "TODO"
 	tuscan_factions.5.a:0 "TODO"
-  #
+  # change of religion
 	tuscan_factions.6.t:0 "TODO"
 	tuscan_factions.6.d:0 "TODO"
 	tuscan_factions.6.a:0 "TODO"
 	tuscan_factions.6.b:0 "TODO"
-  #
+	# Ghibellines have too much power 1
+	# Not answering the pope
 	tuscan_factions.7.t:0 "TODO"
 	tuscan_factions.7.d:0 "TODO"
 	tuscan_factions.7.a:0 "TODO"
-  #
+	# Bishops patronizing
 	tuscan_factions.8.t:0 "TODO"
 	tuscan_factions.8.d:0 "TODO"
 	tuscan_factions.8.a:0 "TODO"
 	tuscan_factions.8.b:0 "TODO"
-  #
+	# Ghibellines sick of the church
 	tuscan_factions.9.t:0 "TODO"
 	tuscan_factions.9.d:0 "TODO"
 	tuscan_factions.9.a:0 "TODO"
 	tuscan_factions.9.b:0 "TODO"
 	tuscan_factions.9.c:0 "TODO"
-  #
+	# The pope attempts to mediate
 	tuscan_factions.10.t:0 "TODO"
 	tuscan_factions.10.d:0 "TODO"
 	tuscan_factions.10.a:0 "TODO"
@@ -50,36 +51,36 @@
 	tuscan_factions.11.d:0 "TODO"
 	tuscan_factions.11.a:0 "TODO"
 	tuscan_factions.11.b:0 "TODO"
-  #
+	# The emperor is displeased
 	tuscan_factions.12.t:0 "TODO"
 	tuscan_factions.12.d:0 "TODO"
 	tuscan_factions.12.a:0 "TODO"
-	#
+	# send gift to the curia
 	tuscan_factions.13.t:0 "TODO"
 	tuscan_factions.13.d:0 "TODO"
 	tuscan_factions.13.a:0 "TODO"
 	tuscan_factions.13.b:0 "TODO"
-	#
+	# A visiting bishop
 	tuscan_factions.14.t:0 "TODO"
 	tuscan_factions.14.d:0 "TODO"
 	tuscan_factions.14.a:0 "TODO"
 	tuscan_factions.14.b:0 "TODO"
-	#
+	# Emperor army passing by
 	tuscan_factions.15.t:0 "TODO"
 	tuscan_factions.15.d:0 "TODO"
 	tuscan_factions.15.a:0 "TODO"
-	#
+	# Discussions in the town council
 	tuscan_factions.16.t:0 "TODO"
 	tuscan_factions.16.d:0 "TODO"
 	tuscan_factions.16.a:0 "TODO"
 	tuscan_factions.16.b:0 "TODO"
 	tuscan_factions.16.c:0 "TODO"
-	#
+	# Dispute between the bishop and a merchant
 	tuscan_factions.17.t:0 "TODO"
 	tuscan_factions.17.d:0 "TODO"
 	tuscan_factions.17.a:0 "TODO"
 	tuscan_factions.17.b:0 "TODO"
-	#
+	# A visiting lord
 	tuscan_factions.18.t:0 "TODO"
 	tuscan_factions.18.d:0 "TODO"
 	tuscan_factions.18.a:0 "TODO"
