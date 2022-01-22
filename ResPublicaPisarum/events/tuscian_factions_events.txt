@@ -156,7 +156,7 @@ country_event = {
 	desc = tuscan_factions.7.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-	# Banish the guelphs
+	# Ignoring the Holy Father
 	option = {
 		name = "tuscan_factions.7.a"
 		add_country_modifier = {
@@ -207,7 +207,7 @@ country_event = {
 	desc = tuscan_factions.9.d
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
-	# refusing to serve side by side
+	# accept they won't serve together
 	option = {
 		name = "tuscan_factions.9.a"
 		add_army_professionalism = -0.3

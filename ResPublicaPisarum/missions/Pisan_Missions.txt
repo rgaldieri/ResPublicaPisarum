@@ -128,7 +128,6 @@ pisan_missions_1 = {
 				name = "followers_of_the_true_cross"
 				duration = 7300
 			}
-			# THIS COULD ALSO BE AN EVENT
 			if = {
 				limit = {
 					ROOT = {

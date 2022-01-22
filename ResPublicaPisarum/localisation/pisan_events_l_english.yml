@@ -22,40 +22,40 @@
   # change of religion
 	tuscan_factions.6.t:0 "TODO"
 	tuscan_factions.6.d:0 "TODO"
-	tuscan_factions.6.a:0 "TODO"
-	tuscan_factions.6.b:0 "TODO"
+	tuscan_factions.6.a:0 "Banish the followers of the Pope!"
+	tuscan_factions.6.b:0 "Allow the catholics to stay"
 	# Ghibellines have too much power 1
 	# Not answering the pope
-	tuscan_factions.7.t:0 "TODO"
-	tuscan_factions.7.d:0 "TODO"
-	tuscan_factions.7.a:0 "TODO"
+	tuscan_factions.7.t:0 "Ignoring the Holy Father"
+	tuscan_factions.7.d:0 "The fierce oppression of guelphs has attracted the attention of the holy father, who has sent emissaries to mediate. Needless to say, ghibelline particularists have prevented those emissaries from reaching the palace. Despite not having a choice, we are deeply displeasing the Holy Father."
+	tuscan_factions.7.a:0 "There is nothing we can do"
 	# Bishops patronizing
-	tuscan_factions.8.t:0 "TODO"
-	tuscan_factions.8.d:0 "TODO"
-	tuscan_factions.8.a:0 "TODO"
-	tuscan_factions.8.b:0 "TODO"
+	tuscan_factions.8.t:0 "Patronizing priests"
+	tuscan_factions.8.d:0 "Many prelates believe that our cities are being corrupted by those who do not believe the Pope to be the only earthly authority, and have started to call for actions. We can let them talk and hope that the situation will not escalate, or we can get them arrested."
+	tuscan_factions.8.a:0 "Arrest them!"
+	tuscan_factions.8.b:0 "Let them talk"
 	# Ghibellines sick of the church
-	tuscan_factions.9.t:0 "TODO"
-	tuscan_factions.9.d:0 "TODO"
-	tuscan_factions.9.a:0 "TODO"
-	tuscan_factions.9.b:0 "TODO"
-	tuscan_factions.9.c:0 "TODO"
+	tuscan_factions.9.t:0 "Should not mix sword and faith"
+	tuscan_factions.9.d:0 "The dominance of ghibellines over guelphs is having a strong impact on our army. Ghibellines are refusing to accept guelphs in their ranks, afraid that they will not fight against the common foes of the empire. Something must be done, or we will no longer have an army to fight our wars."
+	tuscan_factions.9.a:0 "Allow them not to serve together"
+	tuscan_factions.9.b:0 "Give the guelphs a demonstration of power"
+	tuscan_factions.9.c:0 "Try to find some common ground"
 	# The pope attempts to mediate
-	tuscan_factions.10.t:0 "TODO"
-	tuscan_factions.10.d:0 "TODO"
-	tuscan_factions.10.a:0 "TODO"
-	tuscan_factions.10.b:0 "TODO"
-	tuscan_factions.10.c:0 "TODO"
-  #
+	tuscan_factions.10.t:0 "The Pope attempts to mediate"
+	tuscan_factions.10.d:0 "The previous attempt to concile our factions have failed and the Pope has decided to take more decisive actions to protect his followers. Instead of sending a delegate to our city, he has invited our councilors to discuss a proposal on neutral ground. What should we answer?"
+	tuscan_factions.10.a:0 "Attend the meeting"
+	tuscan_factions.10.b:0 "Refuse to participate"
+	tuscan_factions.10.c:0 "Send the Pope a Bishop's head"
+  # 
 	tuscan_factions.11.t:0 "TODO"
 	tuscan_factions.11.d:0 "TODO"
 	tuscan_factions.11.a:0 "TODO"
 	tuscan_factions.11.b:0 "TODO"
 	# The emperor is displeased
-	tuscan_factions.12.t:0 "TODO"
-	tuscan_factions.12.d:0 "TODO"
-	tuscan_factions.12.a:0 "TODO"
-	# send gift to the curia
+	tuscan_factions.12.t:0 "The Emperor is displeased"
+	tuscan_factions.12.d:0 "The voices of our city becoming more and more pious by the day has reached the Emperor, who is highly displeased with us. Guelphs keep confiscating ghibellines properties, but they control the council and everything they do is legally approved, our intervention would only make things worse."
+	tuscan_factions.12.a:0 "We have no power to stop them"
+	# send gifts to the curia
 	tuscan_factions.13.t:0 "TODO"
 	tuscan_factions.13.d:0 "TODO"
 	tuscan_factions.13.a:0 "TODO"
@@ -86,91 +86,94 @@
 	tuscan_factions.18.a:0 "TODO"
 	tuscan_factions.18.b:0 "TODO"
 	# Pisan events
-	#
+	# Mazzascudo - Death of a capitano
   pisan_events.1.t:0 "TODO"
 	pisan_events.1.d:0 "TODO"
 	pisan_events.1.a:0 "TODO"
-	#
+	# Mazzscudo - Injured captain
   pisan_events.2.t:0 "TODO"
 	pisan_events.2.d:0 "TODO"
 	pisan_events.2.a:0 "TODO"
 	pisan_events.2.b:0 "TODO"
-	#
+	# Mazzscudo - A Champion arises
   pisan_events.3.t:0 "TODO"
 	pisan_events.3.d:0 "TODO"
 	pisan_events.3.a:0 "TODO"
 	pisan_events.3.b:0 "TODO"
-	#
+	# Abolition of Death Penalty event
   pisan_events.4.t:0 "TODO"
 	pisan_events.4.d:0 "TODO"
 	pisan_events.4.a:0 "TODO"
 	pisan_events.4.b:0 "TODO"
-	#
+	# Statue of Kinzica
   pisan_events.5.t:0 "TODO"
 	pisan_events.5.d:0 "TODO"
 	pisan_events.5.a:0 "TODO"
 	pisan_events.5.b:0 "TODO"
-	#
+	# Marcello Malpighi
   pisan_events.6.t:0 "TODO"
 	pisan_events.6.d:0 "TODO"
 	pisan_events.6.a:0 "TODO"
 	pisan_events.6.b:0 "TODO"
-	#
+	# Catene del porto pisano events
+	# Pisa does not control Genoa
   pisan_events.7.t:0 "TODO"
 	pisan_events.7.d:0 "TODO"
 	pisan_events.7.a:0 "TODO"
 	pisan_events.7.b:0 "TODO"
-	#
+	# Genoan response
   pisan_events.8.t:0 "TODO"
 	pisan_events.8.d:0 "TODO"
 	pisan_events.8.a:0 "TODO"
 	pisan_events.8.b:0 "TODO"
-	#
+	# Genoa refuses, it shall be war
   pisan_events.9.t:0 "TODO"
 	pisan_events.9.d:0 "TODO"
 	pisan_events.9.a:0 "TODO"
-	#
+	# Liberation from Florence
   pisan_events.10.t:0 "TODO"
 	pisan_events.10.d:0 "TODO"
 	pisan_events.10.a:0 "TODO"
 	# 
 	# Mission Tree Events
 	#
-	pisan_mission_events.2.t:0 "TODO"
-	pisan_mission_events.2.d:0 "TODO"
-	pisan_mission_events.2.a:0 "TODO"
-	pisan_mission_events.2.b:0 "TODO"
+	# Donate to Curia
+	pisan_mission_events.2.t:0 "Donate to the Curia"
+	pisan_mission_events.2.d:0 "The Curia was not very supportive of our plans to expand our dominions in France in name of the True Cross, but reluctantly decided not to get in our way when we promised them part of what we would've obtained. Now that own France it is time to decide, should we compensate them for sitting and watch?"
+	pisan_mission_events.2.a:0 "Please them with a conspicuous donation"
+	pisan_mission_events.2.b:0 "Refuse. They did nothing for us"
 	# 
 	# Tuscian Events
 	#
+	# End Marca della tuscia in 1525
 	tuscian_events.1.t:0 "TODO"
 	tuscian_events.1.d:0 "TODO"
 	tuscian_events.1.a:0 "TODO"
-	#
+	# Ravenna, Ferrara, Parma
 	tuscian_events.2.t:0 "TODO"
 	tuscian_events.2.d:0 "TODO"
 	tuscian_events.2.a:0 "TODO"
 	tuscian_events.2.b:0 "TODO"
-	#
+	# Padova, Verona
 	tuscian_events.3.t:0 "TODO"
 	tuscian_events.3.d:0 "TODO"
 	tuscian_events.3.a:0 "TODO"
 	tuscian_events.3.b:0 "TODO"
-	#
+	# Brescia, Mantova, Cremona
 	tuscian_events.4.t:0 "TODO"
 	tuscian_events.4.d:0 "TODO"
 	tuscian_events.4.a:0 "TODO"
 	tuscian_events.4.b:0 "TODO"
-	#
+	# Tolone, Aix, Forqualier
 	tuscian_events.5.t:0 "TODO"
 	tuscian_events.5.d:0 "TODO"
 	tuscian_events.5.a:0 "TODO"
 	tuscian_events.5.b:0 "TODO"
-	#
+	# start overthrowing tuscia disaster
 	tuscian_events.14.t:0 "TODO"
 	tuscian_events.14.d:0 "TODO"
 	tuscian_events.14.a:0 "TODO"
-	#
+	# Ending overthrowing tuscia disaster
 	tuscian_events.15.t:0 "TODO"
 	tuscian_events.15.d:0 "TODO"
 	tuscian_events.15.a:0 "TODO"

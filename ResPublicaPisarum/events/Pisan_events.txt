@@ -278,6 +278,7 @@ country_event = {
 	}
 }
 
+# Genoan response
 country_event = {
 	id = pisan_events.8
 	title = pisan_events.8.t
@@ -285,6 +286,7 @@ country_event = {
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = yes
 	# Give the chains back
+	# This should create an event too TOOD
 	option = {
 		name = pisan_events.8.a
 		ai_chance = {
@@ -339,7 +341,7 @@ country_event = {
 	}
 }
 
-# Liberazione da firenze
+# Liberation from Florence
 country_event = {
 	id = pisan_events.10
 	title = pisan_events.10.t
