@@ -55,20 +55,20 @@
 	tuscan_factions.12.t:0 "The Emperor is displeased"
 	tuscan_factions.12.d:0 "The voices of our city becoming more and more pious by the day has reached the Emperor, who is highly displeased with us. Guelphs keep confiscating ghibellines properties, but they control the council and everything they do is legally approved, our intervention would only make things worse."
 	tuscan_factions.12.a:0 "We have no power to stop them"
-	# send gifts to the curia
-	tuscan_factions.13.t:0 "TODO"
-	tuscan_factions.13.d:0 "TODO"
-	tuscan_factions.13.a:0 "TODO"
-	tuscan_factions.13.b:0 "TODO"
+	# Economic support to the merchants
+	tuscan_factions.13.t:0 "Economic support to the merchants"
+	tuscan_factions.13.d:0 "Guelphs merchants are now in charge of our fleets, and strong of their numbers have started to make more and more demands. This time, they are requesting us to compensate them for their conversion efforts in unholy lands, something we were not even aware of! If we do not send them whatever they ask for, there is a chance they will take it from somewhere else..."
+	tuscan_factions.13.a:0 "Support their efforts"
+	tuscan_factions.13.b:0 "Nobody asked them to"
 	# A visiting bishop
-	tuscan_factions.14.t:0 "TODO"
-	tuscan_factions.14.d:0 "TODO"
-	tuscan_factions.14.a:0 "TODO"
-	tuscan_factions.14.b:0 "TODO"
+	tuscan_factions.14.t:0 "Foreign bishop wants to celebrate mass"
+	tuscan_factions.14.d:0 "We have been blessed by the visit of an important bishop from Rome. While he has enjoyed his ospitality lately, he feels like he's not performing his duty by spending his time praying in his chambers, and asked to celebrate mass in the Duomo next Sunday."
+	tuscan_factions.14.a:0 "Let him praise the lord!"
+	tuscan_factions.14.b:0 "Forbid it, we do not know what he'll preach"
 	# Emperor army passing by
-	tuscan_factions.15.t:0 "TODO"
-	tuscan_factions.15.d:0 "TODO"
-	tuscan_factions.15.a:0 "TODO"
+	tuscan_factions.15.t:0 "Emperor's army passing by"
+	tuscan_factions.15.d:0 "During one of his campaigns, the Emperor decided to stop in our lands to rest. Aware of the presence of hostile forces near our borders, he decided to repay us by leaving a handful of soldiers to protect our fort, until he comes back."
+	tuscan_factions.15.a:0 "Praised be the Emperor."
 	# Discussions in the town council
 	tuscan_factions.16.t:0 "TODO"
 	tuscan_factions.16.d:0 "TODO"
@@ -81,10 +81,10 @@
 	tuscan_factions.17.a:0 "TODO"
 	tuscan_factions.17.b:0 "TODO"
 	# A visiting lord
-	tuscan_factions.18.t:0 "TODO"
-	tuscan_factions.18.d:0 "TODO"
-	tuscan_factions.18.a:0 "TODO"
-	tuscan_factions.18.b:0 "TODO"
+	tuscan_factions.18.t:0 "A visiting Lord"
+	tuscan_factions.18.d:0 "We have been informed by an emissary that a high dignitary from a ghibelline stronghold is coming to visit in a few weeks. While we are honoured by this visit, we are questioning whether if it's a good idea to hold a public event in his honour, or if it would be more prudent to welcome him privately."
+	tuscan_factions.18.a:0 "Organize a public event"
+	tuscan_factions.18.b:0 "Keep his visit private"
 	# Pisan events
 	# Mazzascudo - Death of a capitano
   pisan_events.1.t:0 "TODO"

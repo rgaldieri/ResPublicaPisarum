@@ -313,7 +313,7 @@ country_event = {
 }
 
 # Guelphs have too much power 3
-# send gift to the curia
+# Economic support to the merchants
 country_event = {
 	id = tuscan_factions.13
 	title = tuscan_factions.13.t
@@ -324,11 +324,13 @@ country_event = {
 	option = {
 		name = "tuscan_factions.13.a"
 		add_treasury = -100
+		# TODO Add modifier in random area (read descr)
 	}
 	# refuse to pay
 	option = {
 		name = "tuscan_factions.13.b"
-		add_mercantilism = -5
+		# TODO Add modifier in random area (read descr)
+		add_mercantilism = -3
 	}
 }
 
