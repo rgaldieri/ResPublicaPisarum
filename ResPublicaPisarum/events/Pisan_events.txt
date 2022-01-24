@@ -12,7 +12,7 @@ country_event = {
 	fire_only_once = no
 	# On average, how often should it happen?
 	mean_time_to_happen = {
-		months = 360
+		months = 600
 		# TODO Add modifier based on army tradition
 		#modifier = {
 		#	factor = 0.8

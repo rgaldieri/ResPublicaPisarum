@@ -70,16 +70,17 @@
 	tuscan_factions.15.d:0 "During one of his campaigns, the Emperor decided to stop in our lands to rest. Aware of the presence of hostile forces near our borders, he decided to repay us by leaving a handful of soldiers to protect our fort, until he comes back."
 	tuscan_factions.15.a:0 "Praised be the Emperor."
 	# Discussions in the town council
-	tuscan_factions.16.t:0 "TODO"
-	tuscan_factions.16.d:0 "TODO"
-	tuscan_factions.16.a:0 "TODO"
-	tuscan_factions.16.b:0 "TODO"
-	tuscan_factions.16.c:0 "TODO"
+	tuscan_factions.16.t:0 "Discussions in the town council"
+	tuscan_factions.16.d:0 "During the last city council there has been much debate over whom should be put in charge of the land registry. Both sides are pushing towards their own members, trying to get an unfair advantage in the certain legal disputes that will emerge next year. We can either favor one of the candidates, or let them fight it out by themselves."
+	tuscan_factions.16.a:0 "Favor the guelph representative"
+	tuscan_factions.16.b:0 "Favor the ghibelline representative"
+	tuscan_factions.16.c:0 "Stay neutral"
+	tuscan_factions.16.d:0 "Find a legal caveat to favor neither"
 	# Dispute between the bishop and a merchant
-	tuscan_factions.17.t:0 "TODO"
-	tuscan_factions.17.d:0 "TODO"
-	tuscan_factions.17.a:0 "TODO"
-	tuscan_factions.17.b:0 "TODO"
+	tuscan_factions.17.t:0 "Dispute over Wine"
+	tuscan_factions.17.d:0 "This year's production has been exceptionally good, and we have more wine than we initially planned. However, a dispute has arisen regarding whom should be benefitting from this abundance. The local curia claims that wine is the blood of Christ and we should donate it to them, while the merchants want to take advantage of its prestige and sell it. Who should we support?"
+	tuscan_factions.17.a:0 "Wine is for the church"
+	tuscan_factions.17.b:0 "Wine is to be sold"
 	# A visiting lord
 	tuscan_factions.18.t:0 "A visiting Lord"
 	tuscan_factions.18.d:0 "We have been informed by an emissary that a high dignitary from a ghibelline stronghold is coming to visit in a few weeks. While we are honoured by this visit, we are questioning whether if it's a good idea to hold a public event in his honour, or if it would be more prudent to welcome him privately."
@@ -87,19 +88,19 @@
 	tuscan_factions.18.b:0 "Keep his visit private"
 	# Pisan events
 	# Mazzascudo - Death of a capitano
-  pisan_events.1.t:0 "TODO"
-	pisan_events.1.d:0 "TODO"
-	pisan_events.1.a:0 "TODO"
+  pisan_events.1.t:0 "Death of a Captain"
+	pisan_events.1.d:0 "We know that the mazzascudo can be a dangerous game, and accident are part of it. Today we mourn the loss of a great Captain, someone who guided our troops with courage and devotion. He shall be remembered among the greatest, someone who fought with great skill and proeficiency, who dodget all swords, except for that last one that he really did not see coming."
+	pisan_events.1.a:0 "Are these games really necessary?"
 	# Mazzscudo - Injured captain
   pisan_events.2.t:0 "TODO"
 	pisan_events.2.d:0 "TODO"
 	pisan_events.2.a:0 "TODO"
 	pisan_events.2.b:0 "TODO"
 	# Mazzscudo - A Champion arises
-  pisan_events.3.t:0 "TODO"
-	pisan_events.3.d:0 "TODO"
-	pisan_events.3.a:0 "TODO"
-	pisan_events.3.b:0 "TODO"
+  pisan_events.3.t:0 "A leader arises"
+	pisan_events.3.d:0 "It's been brought to our attention that a young man has been showing great skills in the art of fighting during the last Mazzscudo. According to our militia, he is as devoted as he is strong, and our troops have blind faith in his abilities. However, some suggest that promoting a commoner to guide our troops could send our men the wrong message. What should we do with him?"
+	pisan_events.3.a:0 "Give him his first command"
+	pisan_events.3.b:0 "Meritocracy has no place in the army!"
 	# Abolition of Death Penalty event
   pisan_events.4.t:0 "TODO"
 	pisan_events.4.d:0 "TODO"

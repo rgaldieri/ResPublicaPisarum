@@ -401,7 +401,6 @@ country_event = {
 	picture = ADVISOR_eventPicture	# TODO
 	is_triggered_only = no
 	trigger = {
-		is_at_war = no
 		has_factions = yes
 		has_any_disaster = no
 		has_faction = guelphs
@@ -463,7 +462,9 @@ country_event = {
 		# TODO modifiers?
 	}
 	trigger = {
-		is_at_war = no
+		emperor = {
+			is_at_war = yes
+		}
 		has_factions = yes
 		has_faction = ghibellines
 		stability = -1
@@ -506,7 +507,6 @@ country_event = {
 		# TODO modifiers?
 	}
 	trigger = {
-		is_at_war = no
 		has_factions = yes
 		has_faction = ghibellines
 		has_faction = guelphs
@@ -533,6 +533,15 @@ country_event = {
 	option = {
 		name = "tuscan_factions.16.c"
 		add_republican_tradition = -5
+	}
+	# Find a legal caveat to solve the dispute
+	option = {
+		name = "tuscan_factions.16.d"
+		highlight = yes
+		trigger = {
+			ruler_has_personality = lawgiver_personality
+		}
+		add_dip_power = -50
 	}
 }
 
