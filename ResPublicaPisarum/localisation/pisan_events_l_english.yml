@@ -89,28 +89,28 @@
 	# Pisan events
 	# Mazzascudo - Death of a capitano
   pisan_events.1.t:0 "Death of a Captain"
-	pisan_events.1.d:0 "We know that the mazzascudo can be a dangerous game, and accident are part of it. Today we mourn the loss of a great Captain, someone who guided our troops with courage and devotion. He shall be remembered among the greatest, someone who fought with great skill and proeficiency, who dodget all swords, except for that last one that he really did not see coming."
+	pisan_events.1.d:0 "We know that the mazzascudo can be a dangerous game, and accident are part of it. Today we mourn the loss of a great Captain, someone who guided our troops with courage and devotion. He shall be remembered among the greatest, someone who fought with great skill and proeficiency, who dodget all hits, except for that last one. He did not see coming."
 	pisan_events.1.a:0 "Are these games really necessary?"
 	# Mazzscudo - Injured captain
-  pisan_events.2.t:0 "TODO"
-	pisan_events.2.d:0 "TODO"
-	pisan_events.2.a:0 "TODO"
-	pisan_events.2.b:0 "TODO"
+  pisan_events.2.t:0 "Injured Captain"
+	pisan_events.2.d:0 "During the last mazzascudo one of our captains was heavily injured when his helmet cracked under the blows of the opponents. The city is praying for his recovery, but he may not survive on his own. A local barber surgeon offered to help, but he won't do it for free."
+	pisan_events.2.a:0 "His fate is in God's hands"
+	pisan_events.2.b:0 "Pay the barber surgeon"
 	# Mazzscudo - A Champion arises
   pisan_events.3.t:0 "A leader arises"
 	pisan_events.3.d:0 "It's been brought to our attention that a young man has been showing great skills in the art of fighting during the last Mazzscudo. According to our militia, he is as devoted as he is strong, and our troops have blind faith in his abilities. However, some suggest that promoting a commoner to guide our troops could send our men the wrong message. What should we do with him?"
 	pisan_events.3.a:0 "Give him his first command"
 	pisan_events.3.b:0 "Meritocracy has no place in the army!"
 	# Abolition of Death Penalty event
-  pisan_events.4.t:0 "TODO"
+  pisan_events.4.t:0 "Abolition of death penalty"
 	pisan_events.4.d:0 "TODO"
-	pisan_events.4.a:0 "TODO"
-	pisan_events.4.b:0 "TODO"
-	# Statue of Kinzica
-  pisan_events.5.t:0 "TODO"
-	pisan_events.5.d:0 "TODO"
-	pisan_events.5.a:0 "TODO"
-	pisan_events.5.b:0 "TODO"
+	pisan_events.4.a:0 "The death penalty is against the will of god. Abolish it"
+	pisan_events.4.b:0 "There are crimes worth killing for. Keep it"
+	# Statue of Kinzica (TODO improve)
+  pisan_events.5.t:0 "A statue for Kinzica"
+	pisan_events.5.d:0 "Our recent endeavours in the Tunisian area and the conquest of the Baleares area have brough back the name of Kinzica around our town. Heroine of our town, she was contemplating the sea when the Saracens attacked back in 1004. Being the only one awake, she was able to wake up all our city, which was in turn capable of defending itself from the assault. While being able to repel the attack, the siege was long and costed us many lives, including the one of poor Kinzica."
+	pisan_events.5.a:0 "Build her a statue"
+	pisan_events.5.b:0 "Refuse to waste money like that"
 	# Marcello Malpighi
   pisan_events.6.t:0 "TODO"
 	pisan_events.6.d:0 "TODO"
