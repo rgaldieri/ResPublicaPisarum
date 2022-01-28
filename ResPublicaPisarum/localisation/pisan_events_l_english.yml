@@ -118,15 +118,15 @@
 	pisan_events.6.b:0 "TODO"
 	# Catene del porto pisano events
 	# Pisa does not control Genoa
-  pisan_events.7.t:0 "TODO"
-	pisan_events.7.d:0 "TODO"
-	pisan_events.7.a:0 "TODO"
-	pisan_events.7.b:0 "TODO"
+  pisan_events.7.t:0 "Chains of the old harbor"
+	pisan_events.7.d:0 "When in 1290 the Genoans destroyed the old Harbor, they stole the chains that were put to defend it from enemy incursions. Every day, they laugh about us looking at the chains that were once symbol of our strenght. Now that we are free again, we must demand those chains back!"
+	pisan_events.7.a:0 "Demand those chains back!"
+	pisan_events.7.b:0 "Chains? What chains?"
 	# Genoan response
-  pisan_events.8.t:0 "TODO"
+  pisan_events.8.t:0 "Pisa demand their old Chains"
 	pisan_events.8.d:0 "TODO"
-	pisan_events.8.a:0 "TODO"
-	pisan_events.8.b:0 "TODO"
+	pisan_events.8.a:0 "Return them. They were rusty anyways"
+	pisan_events.8.b:0 "Let them come get them."
 	# Genoa refuses, it shall be war
   pisan_events.9.t:0 "TODO"
 	pisan_events.9.d:0 "TODO"
