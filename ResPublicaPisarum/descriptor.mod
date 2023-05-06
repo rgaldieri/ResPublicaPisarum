@@ -8,4 +8,4 @@ tags={
 	"National Ideas"
 }
 name="Res Publica Pisarum"
-supported_version="1.31.5"
+supported_version="1.34.1"

@@ -8,5 +8,5 @@ tags={
 	"National Ideas"
 }
 name="Res Publica Pisarum"
-supported_version="1.31.5"
-path="C:/Users/Riccardo/Documents/Paradox Interactive/Europa Universalis IV/mod/ResPublicaPisarum"
+supported_version="1.34.1"
+path="C:/Users/ricca/Documents/Paradox Interactive/Europa Universalis IV/mod/ResPublicaPisarum"

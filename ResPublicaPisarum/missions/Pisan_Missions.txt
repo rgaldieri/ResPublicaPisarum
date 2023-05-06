@@ -6,28 +6,26 @@ pisan_missions_1 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	pisan_pride = {
-		icon = mission_pisa_temporary
-		position = 1
-		required_missions = {
-			#None
-		}
-		trigger = {
-			is_subject = no
-		}
-		effect = {
-			add_stability = 2
-			add_treasury = 50
-			country_event = {
-				id = pisan_events.10
-			}
-		}
-	}
-	italian_bankers = {
-		position = 4
-		icon = italian_bankers
+
+	embrace_renaissance = {
+		icon = renaissance_city # Already present in the game
+		position = 3
 		required_missions = {
 			pisan_pride
+		}
+		trigger = {
+			has_institution = renaissance
+		}
+		effect = {
+			# TODO
+		}
+	}
+
+	italian_bankers = {
+		position = 5
+		icon = italian_bankers
+		required_missions = {
+			embrace_renaissance
 			a_different_granducato
 		}
 		trigger = {
@@ -48,8 +46,30 @@ pisan_missions_1 = {
 			add_mercantilism = 10
 		}
 	}
-	french_affairs = {
+	display_of_wealth = {
 		position = 6
+		icon = ties_with_the_church
+		required_missions = {
+			italian_bankers
+		}
+		trigger = {
+			# Too easy with the loans
+			share_of_starting_income = 1.3
+			treasury = 250
+			115 = {
+				has_building = temple
+			}
+			NOT = {
+				num_of_loans = 1
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_mercantilism = 3
+		}
+	}
+	french_affairs = {
+		position = 7
 		icon = french_affairs
 		required_missions = {
 			amalfi_all_over
@@ -84,7 +104,7 @@ pisan_missions_1 = {
 		}
 	}
 	the_only_true_cross = {
-		position = 7
+		position = 8
 		icon = the_only_true_cross
 		required_missions = {
 			french_affairs
@@ -143,6 +163,71 @@ pisan_missions_1 = {
 			add_adm_power = 50
 		}
 	}
+	the_cartographer = {
+		position = 9
+		icon = brave_new_world
+		required_missions = {
+			# None
+		}
+		trigger = {
+			# Has explored most of the american coast
+		}
+		effect = {
+			add_country_modifier = {
+				name = new_lands_to_explore
+				duration = 7200
+			}
+		}
+	}
+	brave_new_world = {
+		position = 10
+		icon = brave_new_world
+		required_missions = {
+			the_cartographer
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_eastern_america
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 8
+				colonial_region = colonial_eastern_america
+				is_city = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = new_lands_to_explore
+				duration = 7200
+			}
+		}
+	}
+	the_other_side_of_the_globe = {
+		position = 11
+		icon = brave_new_world
+		required_missions = {
+			brave_new_world
+			on_the_silk_road
+		}
+		trigger = {
+			any_country = {
+				has_colonial_parent = PIS
+				capital_scope = {
+					colonial_region = colonial_australia
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = late_to_the_party
+				duration = -1
+			}
+		}
+	}
 }
 
 pisan_missions_2 = {
@@ -156,9 +241,25 @@ pisan_missions_2 = {
 		tag = PIS
 	}
 	has_country_shield = yes
+	secret_army = {
+		position = 1
+		icon = secret_army
+		required_missions = {
+			# None
+		}
+		trigger = {
+			# Army at 100%
+			# Florence opinion at least 80
+			# Liberty desire less than 30
+		}
+
+		effect = {
+			# increase liberty desire significantly
+		}
+	}
 	wipe_the_signoria_out = {
 		icon = wipe_the_signoria_out
-		position = 2
+		position = 3
 		required_missions = {
 			pisan_pride
 		}
@@ -213,7 +314,7 @@ pisan_missions_2 = {
 	}
 	a_different_granducato = {
 		icon = a_different_granducato
-		position = 3
+		position = 4
 		required_missions = {
 			wipe_the_signoria_out
 		}
@@ -251,7 +352,7 @@ pisan_missions_2 = {
 		}
 	}
 	control_the_thyrrenian_sea = {
-		position = 4
+		position = 5
 		icon = control_the_thyrrenian_sea
 		required_missions = {
 			archbishop_of_the_tyrrhenian
@@ -300,7 +401,7 @@ pisan_missions_2 = {
 		}
 	}
 	amalfi_all_over = {
-		position = 5
+		position = 6
 		icon = amalfi_all_over
 		required_missions = {
 			control_the_thyrrenian_sea
@@ -374,7 +475,7 @@ pisan_missions_2 = {
 	}
 	retake_messina = {
 		icon = retake_messina
-		position = 6
+		position = 7
 		required_missions = {
 			amalfi_all_over
 		}
@@ -408,42 +509,79 @@ pisan_missions_2 = {
 			}
 		}
 	}
-	In_supremae_dignitatis = {
-		icon = In_supremae_dignitatis
-		position = 8
+
+	the_port_on_don = {
+		position = 9
+		icon = the_port_on_don
 		required_missions = {
+			leave_no_thrace
 		}
 		provinces_to_highlight = {
-			province_id = 116
+			OR = {
+				# all the provinces we should own to highlight
+				province_id = 286
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		trigger = {
-			# TODO change to ALL provinces with more than 20 dev and 10 admin must have an university
-			num_of_owned_provinces_with = {
-				development = 20
-				value = 10				# how many provinces should have the necessary building / buildings
-				has_building = university
-			}
-			# Both Pisa and siena must have an university
-			AND = {
-				116 = {
-					owned_by = ROOT
-					has_building = university
-				}
-				117 = {
-					owned_by = ROOT
-					has_building = university
-				}
+			286 = {
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
-			ROOT = {
-				add_prestige = 20
-				add_splendor = 10
-				add_country_modifier = {
-					name = "in_supremae_dignitatis_bonus"
-					duration = -1
-				}
+			286 = {
+				change_trade_goods = chinaware
 			}
+			azov_area = {
+				limit = {
+					NOT = {
+						is_claim = ROOT
+					}
+					NOT = {
+						is_core = ROOT
+					}
+				}
+				add_claim = ROOT
+			}
+			change_price = {
+				trade_goods = chinaware
+				key = chinaware_in_pisa
+				value = 0.5
+				duration = 3650
+			}
+		}
+	}
+	on_the_silk_road = {
+		position = 10
+		icon = on_the_silk_road
+		required_missions = {
+			the_port_on_don
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 286
+				area = azov_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			286 = {
+				owned_by = ROOT
+				has_building = shipyard
+				has_building = marketplace
+			}
+			azov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_mercantilism = 5
 		}
 	}
 }
@@ -459,40 +597,83 @@ pisan_missions_3 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	restore_porto_pisano = {
+	tuscan_hate = {
+		icon = tuscan_hate
 		position = 1
-		icon = restore_porto_pisano
 		required_missions = {
 			# None
 		}
-		provinces_to_highlight = {
-			province_id = 115
+		trigger = {
+			# Something like Either Lucca or Siena having 100 relationship 
+		}
+
+		effect = {
+			# Those countries support your liberty desire (Check Sweden tree)
+		}
+	}
+	pisan_pride = {
+		icon = mission_pisa_temporary
+		position = 2
+		required_missions = {
+			tuscan_hate
+			secret_army
+		}
+		trigger = {
+			is_subject = no
+			is_at_war = no
+		}
+		effect = {
+			add_stability = 2
+			add_treasury = 50
+			country_event = {
+				id = pisan_events.10
+			}
+		}
+	}
+	ties_with_the_church = {
+		position = 3
+		icon = ties_with_the_church
+		required_missions = {
 		}
 		trigger = {
 			115 = {
-				has_building = dock
-				has_building = shipyard
+				is_capital = yes
+				owned_by = ROOT
+				has_building = cathedral
+			}
+			# Pisa has cathedral
+			OR = {
+				# Papal controller is pisa
+				PIS = {
+					is_papal_controller = yes
+				}
+				# Pisa has at least 120 friendship with the pope
+				any_country = {
+					is_papal_controller = yes
+					alliance_with = PIS
+				}
 			}
 		}
 		effect = {
-			115 = {
-				add_province_modifier = {
-					name = "city_at_sea"
-					duration = 3650
-				}
+			# THIS GIVES WAY TO PISA TO RESTORE THE OLD COLONIES IN THE MEDITERRANEAN
+			add_papal_influence = 10
+			add_faction_influence = {
+				faction = guelphs
+				influence = 25
 			}
-			add_country_modifier = {
-				# sailors and ship cost
-				name = "funding_the_fleet"
-				duration = 7300
+			add_estate_influence_modifier = {
+				estate = estate_church
+				influence = +10
+				desc = EST_VAL_PIS_POPE
+				duration = 3650
 			}
 		}
 	}
 	archbishop_of_the_tyrrhenian = {
-		position = 3
+		position = 4
 		icon = archbishop_of_the_tyrrhenian
 		required_missions = {
-			wipe_the_signoria_out
+			ties_with_the_church
 			rebuild_the_merchant_fleet
 		}
 		provinces_to_highlight = {
@@ -541,7 +722,7 @@ pisan_missions_3 = {
 		}
 	}
 	islas_baleares = {
-		position = 4
+		position = 5
 		icon = islas_baleares
 		required_missions = {
 			archbishop_of_the_tyrrhenian
@@ -621,7 +802,7 @@ pisan_missions_3 = {
 		}
 	}
 	pelops_and_pisas = {
-		position = 6
+		position = 7
 		icon = leave_no_thrace
 		required_missions = {
 			back_to_first_crusade
@@ -654,7 +835,7 @@ pisan_missions_3 = {
 		}
 	}
 	leave_no_thrace = {
-		position = 7
+		position = 8
 		icon = leave_no_thrace
 		required_missions = {
 			pelops_and_pisas
@@ -682,7 +863,7 @@ pisan_missions_3 = {
 		}
 	}
 	the_last_republic = {
-		position = 9
+		position = 10
 		icon = the_last_republic
 		required_missions = {
 			unum_mare
@@ -714,12 +895,41 @@ pisan_missions_4 = {
 		tag = PIS
 	}
 	has_country_shield = yes
+	restore_porto_pisano = {
+		position = 1
+		icon = restore_porto_pisano
+		required_missions = {
+			# Nope
+		}
+		provinces_to_highlight = {
+			province_id = 115
+		}
+		trigger = {
+			115 = {
+				has_building = dock
+				has_building = shipyard
+			}
+		}
+		effect = {
+			115 = {
+				add_province_modifier = {
+					name = "city_at_sea"
+					duration = 3650
+				}
+			}
+			add_country_modifier = {
+				# sailors and ship cost
+				name = "funding_the_fleet"
+				duration = 7300
+			}
+		}
+	}
 	rebuild_the_merchant_fleet = {
-		position = 2
+		position = 3
 		icon = rebuild_the_merchant_fleet
 		required_missions = {
+			pisan_pride
 			restore_porto_pisano
-			display_of_wealth
 		}
 		provinces_to_highlight = {
 			province_id = 115
@@ -745,11 +955,10 @@ pisan_missions_4 = {
 	}
 	revenging_kinzica = {
 		# This triggers the event as well
-		position = 4
+		position = 5
 		icon = revenging_kinzica
 		required_missions = {
 			archbishop_of_the_tyrrhenian
-			ties_with_the_church
 		}
 		provinces_to_highlight = {
 			area = tunisia_area
@@ -785,7 +994,7 @@ pisan_missions_4 = {
 		}
 	}
 	back_to_first_crusade = {
-		position = 5
+		position = 6
 		icon = back_to_first_crusade
 		required_missions = {
 			revenging_kinzica
@@ -827,7 +1036,7 @@ pisan_missions_4 = {
 		}
 	}
 	expand_to_the_mediterranean = {
-		position = 7
+		position = 8
 		icon = expand_to_the_mediterranean
 		required_missions = {
 			pelops_and_pisas
@@ -852,7 +1061,7 @@ pisan_missions_4 = {
 		}
 	}
 	unum_mare = {
-		position = 8
+		position = 9
 		icon = unum_mare
 		required_missions = {
 			expand_to_the_mediterranean
@@ -892,7 +1101,7 @@ pisan_missions_4 = {
 		}
 	}
 	stolen_embassies = {
-		position = 9
+		position = 10
 		icon = stolen_embassies
 		required_missions = {
 			unum_mare
@@ -933,55 +1142,7 @@ pisan_missions_4 = {
 			}
 		}
 	}
-	brave_new_world = {
-		position = 10
-		icon = brave_new_world
-		required_missions = {
-			stolen_embassies
-			on_the_silk_road
-		}
-		provinces_to_highlight = {
-			colonial_region = colonial_eastern_america
-			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			has_discovered = ROOT
-		}
-		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 8
-				colonial_region = colonial_eastern_america
-				is_city = yes
-			}
-		}
-		effect = {
-			add_country_modifier = {
-				name = new_lands_to_explore
-				duration = 7200
-			}
-		}
-	}
-	the_other_side_of_the_globe = {
-		position = 11
-		icon = brave_new_world
-		required_missions = {
-			brave_new_world
-		}
-		trigger = {
-			any_country = {
-				has_colonial_parent = PIS
-				capital_scope = {
-					colonial_region = colonial_australia
-				}
-			}
-		}
-		effect = {
-			add_country_modifier = {
-				name = late_to_the_party
-				duration = -1
-			}
-		}
-	}
+
 }
 
 pisan_missions_5 = {
@@ -992,68 +1153,53 @@ pisan_missions_5 = {
 		tag = PIS
 	}
 	has_country_shield = yes
-	display_of_wealth = {
-		position = 1
-		icon = ties_with_the_church
+	necessary = {
+		position = 5
+		icon = egyptian_goods
 		required_missions = {
+			
 		}
-		trigger = {
-			# Too easy with the loans
-			share_of_starting_income = 1.3
-			treasury = 250
-			115 = {
-				has_building = temple
-			}
+		provinces_to_highlight = {
+			trade_goods = grain			# which trade good we're interested in
+			region = egypt_region
 			NOT = {
-				num_of_loans = 1
+				owned_by = ROOT
 			}
-		}
-		effect = {
-			add_prestige = 20
-			add_mercantilism = 3
-		}
-	}
-	ties_with_the_church = {
-		position = 3
-		icon = ties_with_the_church
-		required_missions = {
+			# no point highlighting provinces with that good that we already own
+			NOT = {
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+			has_discovered = ROOT
 		}
 		trigger = {
-			115 = {
-				is_capital = yes
-				owned_by = ROOT
-				has_building = cathedral
-			}
-			# Pisa has cathedral
 			OR = {
-				# Papal controller is pisa
-				PIS = {
-					is_papal_controller = yes
-				}
-				# Pisa has at least 120 friendship with the pope
-				any_country = {
-					is_papal_controller = yes
-					alliance_with = PIS
+				# to fulfil this mission, we must either have this number of provinces with the good, OR we can have the trading bonus from having a monopoly
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 3					# how many provinces of this trade good should we have
+					trade_goods = grain					# which trade good should we have
+					region = egypt_region
 				}
 			}
 		}
 		effect = {
-			# THIS GIVES WAY TO PISA TO RESTORE THE OLD COLONIES IN THE MEDITERRANEAN
-			add_papal_influence = 10
-			add_faction_influence = {
-				faction = guelphs
-				influence = 25
+			# Here the player gets a claim on Syria and Aleppo
+			syria_area = {
+				add_claim = ROOT
 			}
-			add_estate_influence_modifier = {
-				estate = estate_church
-				influence = +10
-				desc = EST_VAL_PIS_POPE
-				duration = 3650
+			aleppo_area = {
+				add_claim = ROOT
+			}
+			add_country_modifier = {
+				name = preparing_the_holy_crusade
+				duration = 7200
 			}
 		}
 	}
 	egyptian_goods = {
-		position = 5
+		position = 6
 		icon = egyptian_goods
 		required_missions = {
 			revenging_kinzica
@@ -1098,7 +1244,7 @@ pisan_missions_5 = {
 		}
 	}
 	back_to_second_crusade = {
-		position = 6
+		position = 7
 		icon = back_to_second_crusade
 		required_missions = {
 			back_to_first_crusade
@@ -1131,78 +1277,42 @@ pisan_missions_5 = {
 			add_curia_treasury = 100
 		}
 	}
-	the_port_on_don = {
-		position = 7
-		icon = the_port_on_don
+	In_supremae_dignitatis = {
+		icon = In_supremae_dignitatis
+		position = 11
 		required_missions = {
-			back_to_second_crusade
 		}
 		provinces_to_highlight = {
-			OR = {
-				# all the provinces we should own to highlight
-				province_id = 286
-			}
-			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+			province_id = 116
 		}
 		trigger = {
-			286 = {
-				country_or_non_sovereign_subject_holds = ROOT
+			# TODO change to ALL provinces with more than 20 dev and 10 admin must have an university
+			num_of_owned_provinces_with = {
+				development = 20
+				value = 10				# how many provinces should have the necessary building / buildings
+				has_building = university
 			}
-		}
-		effect = {
-			286 = {
-				change_trade_goods = chinaware
-			}
-			azov_area = {
-				limit = {
-					NOT = {
-						is_claim = ROOT
-					}
-					NOT = {
-						is_core = ROOT
-					}
+			# Both Pisa and siena must have an university
+			AND = {
+				116 = {
+					owned_by = ROOT
+					has_building = university
 				}
-				add_claim = ROOT
-			}
-			change_price = {
-				trade_goods = chinaware
-				key = chinaware_in_pisa
-				value = 0.5
-				duration = 3650
-			}
-		}
-	}
-	on_the_silk_road = {
-		position = 9
-		icon = on_the_silk_road
-		required_missions = {
-			the_port_on_don
-		}
-		provinces_to_highlight = {
-			OR = {
-				province_id = 286
-				area = azov_area
-			}
-			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		trigger = {
-			286 = {
-				owned_by = ROOT
-				has_building = shipyard
-				has_building = marketplace
-			}
-			azov_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+				117 = {
+					owned_by = ROOT
+					has_building = university
+				}
 			}
 		}
 		effect = {
-			add_adm_power = 100
-			add_mercantilism = 5
+			ROOT = {
+				add_prestige = 20
+				add_splendor = 10
+				add_country_modifier = {
+					name = "in_supremae_dignitatis_bonus"
+					duration = -1
+				}
+			}
 		}
 	}
 }
